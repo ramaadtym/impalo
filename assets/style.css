@@ -1,0 +1,25 @@
+.logo{
+    width: 352px;
+    padding: 17px;
+}
+.bgfull{
+    background-image:url("../assets/img/bg_full.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-color:#bfbfbf;
+}
+.bgrow{
+    margin-right:0px !important;
+}
+.bgcolor{
+    background-image: url(../assets/img/bg_login.jpg);
+    background-size: cover;
+    height: 323.5px;
+    margin: 21.5% 0px 0 -15.2px;
+}
+.bgputih{
+    background-color: #FFF;
+    height: 321px;
+    padding: 27px;
+    margin: 21.5% 0px 0 0px;
+}
