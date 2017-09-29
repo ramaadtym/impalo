@@ -14,7 +14,7 @@ class Utama extends MY_Controller
 
     function Login(){
         $username = $this->input->post('nim');
-        $pwd = md5($this->input->post('pwd'));
+        $pwd = sha1($this->input->post('pwd'));
         $cek = $this->m_login->ceklogin($username,$pwd); //load model login
         if($cek->num_rows() > 0){
             $this->session->set_userdata('masuk',true);
