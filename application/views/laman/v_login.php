@@ -8,19 +8,16 @@
                 <img src="<?php echo base_url().'assets/img/Logo.png'?>" class="img-responsive logo">
             </div>
             <div class="col-lg-4 col-md-4 bgputih">
-                <form>
+                <?php echo form_open('Utama/Login');?>
                     <div class="form-group">
-                        <label for="email">Email address:</label>
-                        <input type="email" class="form-control" id="email">
+                        <label for="email">NIM/Username:</label>
+                        <input type="text" class="form-control" name="nim">
                     </div>
                     <div class="form-group">
                         <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd">
+                        <input type="password" class="form-control" name="pwd">
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox"> Remember me</label>
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default">Login</button>
                 </form>
             </div>
         </div>
