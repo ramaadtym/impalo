@@ -14,36 +14,43 @@ class Utama extends MY_Controller
 
     function Login(){
         $username = $this->input->post('nim');
-        $pwd = sha1($this->input->post('pwd'));
+        $pwd = $this->input->post('pwd');
         $cek = $this->m_login->ceklogin($username,$pwd); //load model login
-        if($cek->num_rows() > 0){
+        if($cek != FALSE){
             $this->session->set_userdata('masuk',true);
             $this->session->set_userdata('user',$username);
-            $role=$cek->row_array();
+//            print_r($cek);
 
-
-            if($role['user_level'] =="admin"){
+            if($cek->user_level =="Administrator"){
                 $this->session->set_userdata('akses','admin');
-                $nama = $role['nama'];
-                $id = $role['user_id'];
-                $nip = $role['username'];
+                $nama = $cek->nama;
+                $nim = $cek->nim;
                 $this->session->set_userdata('nama',$nama);
-                $this->session->set_userdata('id_admin',$id);
-                $this->session->set_userdata('nip',$nip);
+                $this->session->set_userdata('nim',$nim);
             }
-            if($role['user_level'] =="kasir"){
-                $this->session->set_userdata('akses','kasir');
-                $nama = $role['nama'];
+            else if ($cek->user_level == "Mahasiswa"){
+                $this->session->set_userdata('akses','mahasiswa');
+                $nama = $cek->nama;
+                $nim = $cek->nim;
                 $this->session->set_userdata('nama',$nama);
+                $this->session->set_userdata('nim',$nim);
             }
 
-        }
+            }
+
         if($this->session->userdata('masuk')==true){
-            redirect('Dashboard');
+            redirect('Utama/Dashboard');
         }
         else{
             redirect('/');
         }
+
+    }
+    function logout(){
+        $this->session->sess_destroy();
+        redirect('/');
+    }
+    function Dashboard(){
 
     }
 }

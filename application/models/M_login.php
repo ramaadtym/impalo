@@ -8,12 +8,13 @@
 class M_login extends CI_Model{
     function ceklogin($u,$p){
     	$password = sha1($p);
+    	$this->db->join('detil_user','user.nim = detil_user.nim');
         $this->db->where('username', $u);
         $this->db->where('password', $password);
         $kue = $this->db->get('user');
         // print_r($kue->result());
         if ($kue->num_rows() > 0){
-        	return TRUE;
+        	return $kue->result()[0];
         }
         else
         {
