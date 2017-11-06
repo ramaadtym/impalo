@@ -13,6 +13,9 @@ class Utama extends MY_Controller
     }
     public function index()
     {
+        if ($this->session->userdata('masuk') == TRUE){
+            redirect('Utama/Dashboard','refresh');
+        }
         $this->login_page('laman/v_login');
     }
 
@@ -33,11 +36,20 @@ class Utama extends MY_Controller
                 $this->session->set_userdata('nim',$nim);
             }
             else if ($cek->user_level == "Mahasiswa"){
-                $this->session->set_userdata('akses','mahasiswa');
+                $this->session->set_userdata('akses','Mahasiswa');
                 $nama = $role['nama'];
                 $nim = $role['nim'];
                 $this->session->set_userdata('nama',$nama);
                 $this->session->set_userdata('nim',$nim);
+            }
+            else if ($cek->user_level == "Tutor"){
+                $this->session->set_userdata('akses','Tutor');
+                $nama = $role['nama'];
+                $nim = $role['nim'];
+                $kode_tutor = $role['kode_tutor'];
+                $this->session->set_userdata('nama',$nama);
+                $this->session->set_userdata('nim',$nim);
+                $this->session->set_userdata('kode_tutor',$kode_tutor);
             }
         }
 
@@ -45,7 +57,7 @@ class Utama extends MY_Controller
             redirect('Utama/Dashboard');
         }
         else{
-            print_r($cek);
+            print_r($cek->result()); 
         }
 
     }
@@ -54,6 +66,9 @@ class Utama extends MY_Controller
         redirect('/');
     }
     function Dashboard(){
+        if (!$this->session->userdata('masuk')){
+            redirect('/','refresh');
+        }
         $queryMatakuliah = $this->M_Matakuliah->getMataKuliah();
         $queryKelas = $this->M_Kelas->getKelas();
         $queryMahasiswa = $this->M_Mahasiswa->getMahasiswa();

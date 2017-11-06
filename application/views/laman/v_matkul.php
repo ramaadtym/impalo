@@ -36,7 +36,27 @@
                             </tr>
                             </thead>
                             <tbody>
-
+                            <?php 
+                            foreach ($tabelMataKuliah as $obj) {
+                                echo "<tr>";
+                                 echo "<td>$obj->kode_matkul</td>";
+                                 echo "<td>$obj->nama_matkul</td>";
+                                 echo "<td class='sorting_1'>
+                                        <a href=''>
+                                            <button type='button' class='btn btn-primary waves-effect'>
+                                                <i class='material-icons'>edit</i>
+                                            </button>
+                                        </a>
+                                        <a href=''>
+                                            <button type='button' class='btn btn-danger waves-effect'>
+                                                <i class='material-icons'>delete_forever</i>
+                                            </button>
+                                        </a>
+                                    </td>";
+                                echo "</tr>";
+                                 }
+                                 ?>
+                                
                             </tbody>
                         </table>
                     </div>

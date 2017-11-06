@@ -9,8 +9,16 @@
 class Kelas extends MY_Controller
 {
 
+public function __construct()
+{
+	parent::__construct();
+	//Do your magic here
+	$this->load->model('M_Kelas');
+}
     public function index(){
-        $this->klas_page('laman/v_kelas');
+    	$query = $this->M_Kelas->getKelas();
+    	$data['tabelKelas'] = $query->result();
+        $this->klas_page('laman/v_kelas',$data);
     }
     public function v_tambahkelas(){
         $this->klas_page('laman/v_addkelas');

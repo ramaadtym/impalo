@@ -10,6 +10,9 @@ class Presensi extends MY_Controller
 {
     public function index()
     {
+        if (!$this->session->userdata('masuk')){
+            redirect('/','refresh');
+        }
         $this->presensi_page('laman/v_presensi');
     }
     public function tambah(){

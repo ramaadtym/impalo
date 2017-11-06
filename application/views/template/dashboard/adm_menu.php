@@ -2,7 +2,7 @@
     <ul class="list">
         <li class="header">Navigasi Utama</li>
         <li class="active">
-            <a href="javascript:void(0);">
+            <a href="<?php echo base_url(); ?>Utama/Dashboard">
                 <i class="material-icons">home</i>
                 <span>Home</span>
             </a>
@@ -14,10 +14,10 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="matkul">Data Mata Kuliah</a>
+                    <a href="<?php echo base_url();?>MataKuliah">Data Mata Kuliah</a>
                 </li>
                 <li>
-                    <a href="matkul/v_tambahmatkul">Tambah Mata Kuliah</a>
+                    <a href="<?php echo base_url();?>MataKuliah/v_tambahMataKuliah">Tambah Mata Kuliah</a>
                 </li>
             </ul>
         </li>

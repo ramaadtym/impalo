@@ -3,10 +3,16 @@
  defined('BASEPATH') OR exit('No direct script access allowed');
  
  class Mahasiswa extends MY_Controller {
- 
+ public function __construct()
+ {
+ 	parent::__construct();
+ 	$this->load->model('M_Mahasiswa');
+ }
  	public function index()
  	{
- 		$this->mhs_page('laman/v_mahasiswa');
+ 		$query = $this->M_Mahasiswa->getMahasiswa();
+ 		$data['tabelMahasiswa'] = $query->result();
+ 		$this->mhs_page('laman/v_mahasiswa',$data);
  	}
  	public function v_tambahmatkul(){
 

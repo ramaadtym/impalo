@@ -38,7 +38,22 @@
                             </tr>
                             </thead>
                             <tbody>
-
+                                  <?php 
+                            foreach ($tabelKelas as $obj) {
+                                echo "<tr>";
+                                echo "<td>$obj->kode_kelas</td>";
+                                echo "<td>$obj->hari</td>";
+                                echo "<td>$obj->jam</td>";
+                                echo "<td>$obj->kode_tutor</td>";
+                                echo "<td>$obj->nama</td>";
+                                echo "<td><a href='#'>
+                                        <button type='button' class='btn btn-default waves-effect'>
+                                            <i class='material-icons'>pageview</i>
+                                        </button></a>
+                                    </td>";
+                                echo "</tr>";
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>

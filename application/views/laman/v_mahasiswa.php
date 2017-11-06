@@ -39,6 +39,23 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php 
+                            foreach ($tabelMahasiswa as $obj) {
+                                echo "<tr>";
+                                echo "<td>$obj->nim</td>";
+                                echo "<td>$obj->nama</td>";
+                                echo "<td>$obj->fakultas</td>";
+                                echo "<td>$obj->jurusan</td>";
+                                echo "<td>$obj->kelas</td>";
+                                echo "<td>$obj->id_line</td>";
+                                echo "<td><a href='#'>
+                                        <button type='button' class='btn btn-default waves-effect'>
+                                            <i class='material-icons'>pageview</i>
+                                        </button></a>
+                                    </td>";
+                                echo "</tr>";
+                            }
+                            ?>
 
                             </tbody>
                         </table>

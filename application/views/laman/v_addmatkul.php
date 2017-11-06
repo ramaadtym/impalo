@@ -18,7 +18,7 @@
 <section class="content">
     <div class="container-fluid">
         <!-- Input -->
-        <form id="form_advanced_validation" action="../../fungsi/kurikulum.php?tambahmatkul=tambah" method="POST">
+        <?php echo form_open('MataKuliah/tambahMataKuliah'); ?>
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
