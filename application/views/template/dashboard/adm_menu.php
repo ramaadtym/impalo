@@ -28,7 +28,7 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="#">Data Mahasiswa</a>
+                    <a href="<?php echo base_url();?>mahasiswa">Data Mahasiswa</a>
                 </li>
             </ul>
         </li>
