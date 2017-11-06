@@ -18,4 +18,8 @@ class MY_Controller extends CI_Controller
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/login/index', $data);
     }
+    function dashboard_page($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/dashboard/index', $data);
+    }
 }

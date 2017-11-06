@@ -5,7 +5,7 @@
     <div class="col-lg-8 col-sm-7 col-md-offset-3 col-sm-offset-4 ">
         <div class="row">
             <div class="col-lg-7 col-md-4 bgcolor">
-                <img src="<?php echo base_url().'assets/img/Logo.png'?>" class="img-responsive logo">
+                <img src="<?php echo base_url().'assets/img/logo.png'?>" class="img-responsive logo">
             </div>
             <div class="col-lg-4 col-md-4 bgputih">
                 <?php echo form_open('Utama/Login');?>

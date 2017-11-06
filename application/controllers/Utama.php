@@ -51,11 +51,7 @@ class Utama extends MY_Controller
         redirect('/');
     }
     function Dashboard(){
-
-        echo $this->session->userdata('akses') . " Berhasil Login <br>";
-        echo "<a href='../Lampiran'>Tambah Mata Kuliah</a><br>";
-        echo "<a href='../MataKuliah'>Tambah Lampiran</a><br>";
-        echo "<a href='logout'>LogOut</a><br>";
+        $this->dashboard_page('laman/v_dashboard');
     }
 }
 
