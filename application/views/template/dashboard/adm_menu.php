@@ -17,7 +17,7 @@
                     <a href="matkul">Data Mata Kuliah</a>
                 </li>
                 <li>
-                    <a href="matkul/create.php">Tambah Mata Kuliah</a>
+                    <a href="matkul/v_tambahmatkul">Tambah Mata Kuliah</a>
                 </li>
             </ul>
         </li>

@@ -27,12 +27,15 @@
 
     <!-- Custom Css -->
     <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/style.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo base_url(); ?>assets/css/themes/all-themes.css" rel="stylesheet" />
 
 </head>
-
+<?php if($this->session->userdata('akses') == 'Admin'){?>
+    <body class="theme-blue-grey">
+<?php   } ?>
 <body class="theme-red">
 <?php
 /*
