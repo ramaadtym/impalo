@@ -28,13 +28,16 @@
 
     <!-- Custom Css -->
     <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/style.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo base_url(); ?>assets/css/themes/all-themes.css" rel="stylesheet" />
 
 </head>
-
-<body class="theme-red">
+<?php if($this->session->userdata('akses') == 'Admin'){?>
+    <body class="theme-blue-grey">
+<?php   } ?>
+    <body class="theme-red">
 <?php
 /*
  * Variabel $headernya diambil dari libraries template.php
@@ -53,7 +56,7 @@ echo $content;
 <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
 <!-- Slimscroll Plugin Js -->
-<script src="../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="<?php echo base_url(); ?>assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
 <!-- Waves Effect Plugin Js -->
 <script src="<?php echo base_url(); ?>assets/plugins/node-waves/waves.js"></script>

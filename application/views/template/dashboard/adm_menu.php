@@ -1,11 +1,36 @@
 <div class="menu">
     <ul class="list">
-        <li class="header">NAVIGASI UTAMA</li>
-        <li>
-            <a href="<?php echo base_url();?>/Utama/Dashboard">
+        <li class="header">MAIN NAVIGATION</li>
+        <li class="active">
+            <a href="javascript:void(0);">
                 <i class="material-icons">home</i>
-                <span>Beranda</span>
+                <span>Home</span>
             </a>
+        </li>
+        <li>
+            <a href="javascript:void(0);" class="menu-toggle">
+                <i class="material-icons">book</i>
+                <span>Mata Kuliah</span>
+            </a>
+            <ul class="ml-menu">
+                <li>
+                    <a href="matkul">Data Mata Kuliah</a>
+                </li>
+                <li>
+                    <a href="matkul/create.php">Tambah Mata Kuliah</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);" class="menu-toggle">
+                <i class="material-icons">people</i>
+                <span>Mahasiswa</span>
+            </a>
+            <ul class="ml-menu">
+                <li>
+                    <a href="#">Data Mahasiswa</a>
+                </li>
+            </ul>
         </li>
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
@@ -39,8 +64,19 @@
         </li>
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="material-icons">person</i>
-                <span>Profile</span>
+                <i class="material-icons">school</i>
+                <span>Tutor</span>
+            </a>
+            <ul class="ml-menu">
+                <li>
+                    <a href="tutor">Data Tutor</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);" class="menu-toggle">
+                <i class="material-icons">accessibility</i>
+                <span>Profil</span>
             </a>
             <ul class="ml-menu">
                 <li>
@@ -51,6 +87,32 @@
                 </li>
             </ul>
         </li>
+        <li>
+            <a href="javascript:void(0);" class="menu-toggle">
+                <i class="material-icons">sentiment_very_satisfied</i>
+                <span>Pengguna</span>
+            </a>
+            <ul class="ml-menu">
+                <li>
+                    <a href="<?php echo base_url();?>#">Data Pengguna</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>#">Tambah Admin</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>#">Tambah Tutor</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>#">Tambah Mahasiswa</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="pelaporan">
+                <i class="material-icons">assignment_turned_in</i><span>Pelaporan Gaji</span>
+            </a>
+        </li>
+        <li>
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">attachment</i>
@@ -67,3 +129,4 @@
         </li>
     </ul>
 </div>
+

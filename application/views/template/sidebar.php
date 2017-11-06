@@ -1,7 +1,7 @@
 <!-- Left Sidebar -->
 <aside id="leftsidebar" class="sidebar">
     <!-- User Info -->
-    <div class="user-info">
+    <div class="user-info bgadmin">
         <!--<div class="image">
             <img src="../images/user.png" width="48" height="48" alt="User" />
         </div>-->
