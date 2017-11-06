@@ -20,6 +20,11 @@
  	}
  		return FALSE;
  	}
+ 	public function getMataKuliah(){
+
+        $query = $this->db->get('matkul');
+        return $query;
+    }
  
  }
  

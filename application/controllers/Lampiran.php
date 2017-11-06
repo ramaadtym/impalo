@@ -8,14 +8,20 @@
 
 class Lampiran extends MY_Controller
 {
-    function unggah_lampiran()
+    public function __construct()
+    {
+
+        $this->load->model('M_Lampiran');
+    }
+
+    public function index(){
+
+    }
+    private function do_unggah_lampiran()
     {
         $config['upload_path'] = './upload/';
         $config['allowed_types'] = 'pdf';
         $this->load->library('upload', $config);
-
-        $this->load->model('M_Lampiran');
-
         if (!$this->upload->do_upload('lampiran')) {
             $error = array('error' => $this->upload->display_errors());
         } else {
@@ -40,13 +46,12 @@ class Lampiran extends MY_Controller
         }
     }
 
-    function hapus_lampiran($id){
-        $this->load->model('M_Lampiran');
+    private function do_hapus_lampiran($id){
         $this->M_Lampiran->hapusLampiran($id);
     }
 
-    function index()
+    function unggahLampiran()
     {
-        $this->load->view('testing/lampiran.php');
+
     }
 }

@@ -23,4 +23,9 @@ class MY_Controller extends CI_Controller
         $data['footer'] = $this->load->view('template/footer');
         $this->load->view('template/dashboard/index', $data);
     }
+    function kelas_page($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $data['footer'] = $this->load->view('template/footer');
+        $this->load->view('template/dashboard/index', $data);
+    }
 }

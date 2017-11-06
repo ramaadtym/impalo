@@ -6,6 +6,10 @@ class Utama extends MY_Controller
     function __construct(){
         parent::__construct();
         $this->load->model('m_login');
+        $this->load->model('M_Matakuliah');
+        $this->load->model('M_Kelas');
+        $this->load->model('M_Mahasiswa');
+        $this->load->model('M_Tutor');
     }
     public function index()
     {
@@ -35,7 +39,6 @@ class Utama extends MY_Controller
                 $this->session->set_userdata('nama',$nama);
                 $this->session->set_userdata('nim',$nim);
             }
-
             }
 
         if($this->session->userdata('masuk')==true){
@@ -51,7 +54,17 @@ class Utama extends MY_Controller
         redirect('/');
     }
     function Dashboard(){
-        $this->dashboard_page('laman/v_dashboard');
+        $queryMatakuliah = $this->M_Matakuliah->getMataKuliah();
+        $queryKelas = $this->M_Kelas->getKelas();
+        $queryMahasiswa = $this->M_Mahasiswa->getMahasiswa();
+        $queryTutor = $this->M_Tutor->getTutor();
+        $data = array(
+                'jumlahMataKuliah' => $queryMatakuliah->num_rows(),
+                'jumlahKelas' => $queryKelas->num_rows(),
+                'jumlahMahasiswa' => $queryMahasiswa->num_rows(),
+                'jumlahTutor' => $queryTutor->num_rows()
+        );
+        $this->dashboard_page('laman/v_dashboard',$data);
     }
 }
 
