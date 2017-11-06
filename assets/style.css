@@ -26,6 +26,13 @@
 .bgadmin {
     background: url("images/admin_bg.jpg") no-repeat no-repeat;
 }
-.sidebar .user-info .info-container .name,  .user-helper-dropdown{
+.sidebar .user-info .info-container .name,  .user-helper-dropdown, .email{
     color:#000 !important;
+ }
+.name,.email{
+    background-color:rgba(255,255,255,0.5);
+    font-weight: bold;
+    padding: 5px 0 4px 10px;
+    border-radius:4px;
+    height: 10%;
  }
