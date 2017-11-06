@@ -12,4 +12,7 @@ class Kelas extends MY_Controller
     public function index(){
         $this->klas_page('laman/v_kelas');
     }
+    public function v_tambahkelas(){
+        $this->klas_page('laman/v_addkelas');
+    }
 }

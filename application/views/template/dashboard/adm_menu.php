@@ -42,7 +42,7 @@
                     <a href="<?php echo base_url();?>Kelas">Data Kelas</a>
                     <?php
                     if($this->session->userdata('akses') == 'Admin'){?>
-                        <a href="<?php echo base_url();?>Kelas">Tambah Kelas</a>
+                        <a href="<?php echo base_url();?>Kelas/v_tambahkelas">Tambah Kelas</a>
 
                     <?php };?>
                 </li>
