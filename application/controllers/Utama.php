@@ -22,7 +22,7 @@ class Utama extends MY_Controller
 //            print_r($cek);
 
             if($cek->user_level =="Administrator"){
-                $this->session->set_userdata('akses','admin');
+                $this->session->set_userdata('akses','Admin');
                 $nama = $cek->nama;
                 $nim = $cek->nim;
                 $this->session->set_userdata('nama',$nama);

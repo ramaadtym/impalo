@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <p>Please wait...</p>
+        <p>Harap Tunggu...</p>
     </div>
 </div>
 <!-- #END# Page Loader -->
@@ -23,7 +23,7 @@
         <div class="navbar-header">
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="javascript:void(0);">BIMA -</a>
+            <a class="navbar-brand" href="javascript:void(0);">BIMA - <?php echo strtoupper($this->session->userdata('akses'));?></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -38,11 +38,11 @@
     <aside id="leftsidebar" class="sidebar">
         <!-- User Info -->
         <div class="user-info">
-            <div class="image">
+            <!--<div class="image">
                 <img src="../images/user.png" width="48" height="48" alt="User" />
-            </div>
+            </div>-->
             <div class="info-container">
-                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo strtoupper($_SESSION['nama'])?></div>
+                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $this->session->userdata('nama');?></div>
                 <div class="email"><?php /*echo $_SESSION['user_level']*/?></div>
                 <div class="btn-group user-helper-dropdown">
                     <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
@@ -120,6 +120,7 @@
         </div>
         <!-- #Menu -->
         <!-- Footer -->
+        <?php $this->load->view('template/footer');?>
         <!-- #Footer -->
     </aside>
     <!-- #END# Left Sidebar -->
@@ -129,6 +130,7 @@
     <div class="container-fluid">
         <div class="block-header">
             <h2>DASHBOARD</h2>
+
         </div>
 
         <!-- Widgets -->
