@@ -3,7 +3,10 @@
 <div class="overlay"></div>
 <!-- #END# Overlay For Sidebars -->
 <!-- Top Bar -->
-<?php $this->load->view('template/navbar');?>
+<?php
+$this->load->view('template/navbar');
+
+?>
 <!-- #Top Bar -->
 <section>
     <?php $this->load->view('template/sidebar');?>
@@ -18,7 +21,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>DASHBOARD</h2>
+            <h2>DASHBOARD </h2>
 
         </div>
 

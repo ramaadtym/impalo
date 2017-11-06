@@ -5,7 +5,7 @@ class Utama extends MY_Controller
 {
     function __construct(){
         parent::__construct();
-        $this->load->model('m_login');
+        $this->load->model('M_login');
         $this->load->model('M_Matakuliah');
         $this->load->model('M_Kelas');
         $this->load->model('M_Mahasiswa');
@@ -18,34 +18,34 @@ class Utama extends MY_Controller
 
     function Login(){
         $username = $this->input->post('nim');
-        $pwd = $this->input->post('pwd');
-        $cek = $this->m_login->ceklogin($username,$pwd); //load model login
-        if($cek != FALSE){
+        $pwd = sha1($this->input->post('pwd'));
+        $cek = $this->M_login->ceklogin($username,$pwd); //load model login
+
+        if($cek->num_rows() > 0){
             $this->session->set_userdata('masuk',true);
             $this->session->set_userdata('user',$username);
-//            print_r($cek);
-
-            if($cek->user_level =="Administrator"){
+            $role = $cek->row_array();
+            if($role['user_level'] =="Administrator"){
                 $this->session->set_userdata('akses','Admin');
-                $nama = $cek->nama;
-                $nim = $cek->nim;
+                $nama = $role['nama'];
+                $nim = $role['nim'];
                 $this->session->set_userdata('nama',$nama);
                 $this->session->set_userdata('nim',$nim);
             }
             else if ($cek->user_level == "Mahasiswa"){
                 $this->session->set_userdata('akses','mahasiswa');
-                $nama = $cek->nama;
-                $nim = $cek->nim;
+                $nama = $role['nama'];
+                $nim = $role['nim'];
                 $this->session->set_userdata('nama',$nama);
                 $this->session->set_userdata('nim',$nim);
             }
-            }
+        }
 
         if($this->session->userdata('masuk')==true){
             redirect('Utama/Dashboard');
         }
         else{
-            redirect('/');
+            print_r($cek);
         }
 
     }
