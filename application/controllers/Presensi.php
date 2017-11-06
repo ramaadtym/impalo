@@ -8,13 +8,9 @@
 
 class Presensi extends MY_Controller
 {
-    public function __construct()
-    {
-    }
-
     public function index()
     {
-
+        $this->presensi_page('laman/v_presensi');
     }
     public function tambah(){
 

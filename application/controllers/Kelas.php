@@ -8,10 +8,8 @@
 
 class Kelas extends MY_Controller
 {
-    public function __construct()
-    {
-    }
-    public function index(){
 
+    public function index(){
+        $this->klas_page('laman/v_kelas');
     }
 }

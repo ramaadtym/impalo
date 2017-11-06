@@ -168,7 +168,7 @@
         <?php
         require '../koneksi.php';
         $matkul = mysqli_query($connect, "SELECT kode_matkul FROM matkul");
-        $kelas = mysqli_query($connect, "SELECT kode_kelas FROM kelas");
+        $kelas = mysqli_query($connect, "SELECT kode_kelas FROM kls");
         $mahasiswa = mysqli_query($connect, "SELECT nim FROM user WHERE user_level='Mahasiswa'");
         $tutor = mysqli_query($connect, "SELECT kode_tutor FROM tutor");
         ?>

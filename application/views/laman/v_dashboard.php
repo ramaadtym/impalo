@@ -15,7 +15,6 @@
         <!-- #Footer -->
     </aside>
 </section>
-
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">

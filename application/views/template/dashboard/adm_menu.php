@@ -1,7 +1,7 @@
 <div class="menu">
     <ul class="list">
         <li class="header">NAVIGASI UTAMA</li>
-        <li class="active">
+        <li>
             <a href="<?php echo base_url();?>/Utama/Dashboard">
                 <i class="material-icons">home</i>
                 <span>Beranda</span>
@@ -15,6 +15,11 @@
             <ul class="ml-menu">
                 <li>
                     <a href="<?php echo base_url();?>Kelas">Data Kelas</a>
+                    <?php
+                    if($this->session->userdata('akses') == 'Admin'){?>
+                        <a href="<?php echo base_url();?>Kelas">Tambah Kelas</a>
+
+                    <?php };?>
                 </li>
             </ul>
         </li>

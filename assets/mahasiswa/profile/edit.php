@@ -437,7 +437,7 @@
                  tgl_lahir='$tgl_lahir',
                  fakultas='$fakultas',
                  jurusan='$jurusan',
-                 kelas='$kelas',
+                 kelas=k$kelasls,
                  id_line='$id_line',
                  telepon='$telepon'
                  WHERE nim='$nim';";
@@ -470,7 +470,7 @@
                  tgl_lahir='$tgl_lahir',
                  fakultas='$fakultas',
                  jurusan='$jurusan',
-                 kelas='$kelas',
+                 kelas=k$kelasls,
                  id_line='$id_line',
                  telepon='$telepon'
                  WHERE nim='$nim';";
