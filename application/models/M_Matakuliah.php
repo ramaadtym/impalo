@@ -20,6 +20,16 @@
  	}
  		return FALSE;
  	}
+ 	public function hapusMataKuliah($kode_matkul)
+ 	{
+ 		$this->db->where('kode_matkul', $kode_matkul);
+ 		$this->db->delete('matkul');
+ 		if ($this->db->affected_rows() > 0){
+ 			return TRUE;
+ 		}
+ 		return FALSE;
+ 	}
+ 		
  	public function getMataKuliah(){
 
         $query = $this->db->get('matkul');

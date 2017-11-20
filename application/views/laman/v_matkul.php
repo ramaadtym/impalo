@@ -38,16 +38,18 @@
                             <tbody>
                             <?php 
                             foreach ($tabelMataKuliah as $obj) {
+                                $link_hapus = base_url() . "/MataKuliah/hapusMataKuliah/" . $obj->kode_matkul;
+                                $link_sunting = base_url() . "/MataKuliah/suntingMataKuliah/" . $obj->kode_matkul;
                                 echo "<tr>";
                                  echo "<td>$obj->kode_matkul</td>";
                                  echo "<td>$obj->nama_matkul</td>";
                                  echo "<td class='sorting_1'>
-                                        <a href=''>
+                                        <a href='$link_sunting'>
                                             <button type='button' class='btn btn-primary waves-effect'>
                                                 <i class='material-icons'>edit</i>
                                             </button>
                                         </a>
-                                        <a href=''>
+                                        <a href='$link_hapus'>
                                             <button type='button' class='btn btn-danger waves-effect'>
                                                 <i class='material-icons'>delete_forever</i>
                                             </button>

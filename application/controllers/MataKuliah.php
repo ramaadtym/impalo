@@ -53,6 +53,25 @@
  			redirect('/','refresh');
  		}
  	}
+ 	public function hapusMataKuliah($kode_matkul)
+ 	{
+ 		if ($this->session->userdata('masuk') && $this->session->userdata('akses') == "Admin"){
+			$MataKuliah = new M_Matakuliah();
+			if ($MataKuliah->hapusMataKuliah($kode_matkul)){
+				$this->session->set_flashdata('success', 'Hapus mata kuliah berhasil');
+				redirect('MataKuliah');
+			}
+			else
+			{
+				$this->session->set_flashdata('error', 'Hapus mata kuliah gagal');
+				redirect('MataKuliah');	
+			}
+ 		}
+ 		else
+ 		{
+ 			redirect('/','refresh');
+ 		}
+ 	}
  
  }
  
