@@ -24,6 +24,6 @@ class Presensi extends MY_Controller
         $this->presensi_page('laman/v_presensi',$data);
     }
     public function tambah(){
-
+        $this->addpresensi_page('laman/v_addpresensi');
     }
 }
