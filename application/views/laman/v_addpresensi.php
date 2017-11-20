@@ -64,7 +64,7 @@
                                     <div class="form-group form-float">
                                         <label class="form-label">Tanggal</label>
                                         <div class="form-line">
-                                            <input type="text" class="datepicker form-control" name="tanggal" placeholder="Please choose a date..." required>
+                                            <input type="text" class="datepicker form-control" placeholder="Please choose a date...">
                                         </div>
                                     </div>
                                 </div>
