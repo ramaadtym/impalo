@@ -26,6 +26,10 @@ class MY_Controller extends CI_Controller
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/kls/index', $data);
     }
+    function tutor_page($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/tutor/index', $data);
+    }
     function presensi_page($content, $data = NULL){
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/presensi/index', $data);

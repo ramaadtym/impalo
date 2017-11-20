@@ -73,20 +73,20 @@
                 </li>
             </ul>
         </li>
-        <li>
+       <!-- <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">accessibility</i>
                 <span>Profil</span>
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="<?php echo base_url();?>User">My Profile</a>
+                    <a href="<?php /*echo base_url();*/?>User">My Profile</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>User/editProfil">Edit Profile</a>
+                    <a href="<?php /*echo base_url();*/?>User/editProfil">Edit Profile</a>
                 </li>
             </ul>
-        </li>
+        </li>-->
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">sentiment_very_satisfied</i>
