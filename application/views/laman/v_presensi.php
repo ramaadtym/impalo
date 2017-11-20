@@ -30,15 +30,44 @@
                             <thead>
                             <tr>
                                 <th>Kode Kelas</th>
-                                <th>Hari</th>
+                                <th>Pertemuan</th>
+                                <th>Tanggal</th>
                                 <th>Jam</th>
-                                <th>Kode Tutor</th>
-                                <th>Nama Tutor</th>
+                                <th>Status ACC</th>
+                                <th>Admin ACC</th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
                             <tbody>
-
+                            <?php foreach ($tabel as $obj) {
+                                ?>
+                                <tr>
+                                <td><?php echo $obj->kode_kelas; ?></td>
+                                <td><?php echo $obj->status_pertemuan; ?></td>
+                                <td><?php echo $obj->tanggal; ?></td>
+                                <td><?php echo $obj->waktu_mulai . " - " . $obj->waktu_selesai; ?></td>
+                                <td><?php echo $obj->status_acc; ?></td>
+                                <td><?php echo $obj->admin_acc; ?></td>
+                                <td>
+                                    <a href="">
+                                        <button type="button" class="btn btn-default waves-effect">
+                                            <i class="material-icons">pageview</i>
+                                        </button>
+                                    </a>
+                                    <a href="">
+                                        <button type="button" class="btn btn-primary waves-effect">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                    </a>
+                                    <a href="">
+                                        <button type="button" class="btn btn-danger waves-effect">
+                                            <i class="material-icons">delete_forever</i>
+                                        </button>
+                                    </a>
+                                </td>
+                                </tr>
+                                <?
+                            } ?>
                             </tbody>
                         </table>
                     </div>

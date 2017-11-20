@@ -34,6 +34,8 @@ class Utama extends MY_Controller
                 $nim = $role['nim'];
                 $this->session->set_userdata('nama',$nama);
                 $this->session->set_userdata('nim',$nim);
+                
+
             }
             else if ($cek->user_level == "Mahasiswa"){
                 $this->session->set_userdata('akses','Mahasiswa');

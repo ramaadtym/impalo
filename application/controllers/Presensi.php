@@ -8,12 +8,20 @@
 
 class Presensi extends MY_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
+		//Do your magic here
+		$this->load->model('M_Presensi');
+	}
     public function index()
     {
-        if (!$this->session->userdata('masuk')){
+        if (!($this->session->userdata('masuk') && $this->session->userdata('akses') == "Admin")){
             redirect('/','refresh');
         }
-        $this->presensi_page('laman/v_presensi');
+        $model_presensi = new M_Presensi();
+        $data['tabel'] = $model_presensi->getAllPresensi();
+        $this->presensi_page('laman/v_presensi',$data);
     }
     public function tambah(){
 
