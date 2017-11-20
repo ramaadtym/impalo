@@ -94,7 +94,7 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="<?php echo base_url();?>#">Data Pengguna</a>
+                    <a href="<?php echo base_url();?>User">Data Pengguna</a>
                 </li>
                 <li>
                     <a href="<?php echo base_url();?>#">Tambah Admin</a>
@@ -108,7 +108,7 @@
             </ul>
         </li>
         <li>
-            <a href="pelaporan">
+            <a href="<?php echo base_url();?>Gaji">
                 <i class="material-icons">assignment_turned_in</i><span>Pelaporan Gaji</span>
             </a>
         </li>
