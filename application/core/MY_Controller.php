@@ -54,6 +54,18 @@ class MY_Controller extends CI_Controller
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/presensi/index_add', $data);
     }
+    function addadmin_page($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/admin/index', $data);
+    }
+    function addtutor_page($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/tutor/index_add', $data);
+    }
+    function addmhs_page($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/mahasiswa/index_add', $data);
+    }
     function mhs_page($content, $data = NULL){
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/mahasiswa/index', $data);

@@ -97,13 +97,13 @@
                     <a href="<?php echo base_url();?>User">Data Pengguna</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>#">Tambah Admin</a>
+                    <a href="<?php echo base_url();?>User/addAdmin">Tambah Admin</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>#">Tambah Tutor</a>
+                    <a href="<?php echo base_url();?>User/addTutor">Tambah Tutor</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>#">Tambah Mahasiswa</a>
+                    <a href="<?php echo base_url();?>User/addMhs">Tambah Mahasiswa</a>
                 </li>
             </ul>
         </li>
