@@ -46,6 +46,10 @@ class MY_Controller extends CI_Controller
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/gaji/index', $data);
     }
+    function lampiran_page($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/lampiran/index', $data);
+    }
     function mhs_page($content, $data = NULL){
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/mahasiswa/index', $data);
