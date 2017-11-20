@@ -46,6 +46,6 @@ class Lampiran extends MY_Controller
 
     function unggahLampiran()
     {
-
+        $this->addlampiran_page('laman/v_addlampiran');
     }
 }

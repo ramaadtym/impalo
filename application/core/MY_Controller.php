@@ -50,6 +50,10 @@ class MY_Controller extends CI_Controller
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/lampiran/index', $data);
     }
+    function addlampiran_page($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/lampiran/index_add', $data);
+    }
     function addpresensi_page($content, $data = NULL){
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/presensi/index_add', $data);
