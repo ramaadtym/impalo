@@ -18,6 +18,7 @@
 
     <!-- Waves Effect Css -->
     <link href="<?php echo base_url(); ?>assets/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="<?php echo base_url(); ?>assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
     <!-- Animation Css -->
     <link href="<?php echo base_url(); ?>assets/plugins/animate-css/animate.css" rel="stylesheet" />
@@ -83,6 +84,8 @@ echo $content;
 <!-- Custom Js -->
 <script src="<?php echo base_url(); ?>assets/js/admin.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/pages/index.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/pages/forms/basic-form-elements.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/pages/forms/form-validation.js"></script>
 
 <!-- Demo Js -->
 <script src="<?php echo base_url(); ?>assets/js/demo.js"></script>

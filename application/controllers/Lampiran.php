@@ -38,7 +38,7 @@ class Lampiran extends MY_Controller
             );
             $this->M_Lampiran->tambahLampiran($data);*/
         }
-    
+
 
     private function do_hapus_lampiran($id){
       /*  $this->M_Lampiran->hapusLampiran($id);*/
