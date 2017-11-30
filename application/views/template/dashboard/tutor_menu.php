@@ -34,29 +34,15 @@
         </li>
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="material-icons">person</i>
-                <span>Profile</span>
-            </a>
-            <ul class="ml-menu">
-                <li>
-                    <a href="profile">My Profile</a>
-                </li>
-                <li>
-                    <a href="profile/edit.php">Edit Profile</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">attachment</i>
                 <span>Lampiran</span>
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="lampiran">Data Lampiran</a>
+                    <a href="<?php echo base_url();?>Lampiran">Data Lampiran</a>
                 </li>
                 <li>
-                    <a href="lampiran/upload.php">Unggah Lampiran</a>
+                    <a href="<?php echo base_url();?>Lampiran/unggahLampiran">Unggah Lampiran</a>
                 </li>
             </ul>
         </li>

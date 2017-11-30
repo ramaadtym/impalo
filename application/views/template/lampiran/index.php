@@ -34,9 +34,10 @@
 
 </head>
 <?php if($this->session->userdata('akses') == 'Admin'){?>
-    <body class="theme-blue-grey">
-<?php   } ?>
-<body class="theme-red">
+<body class="theme-blue-grey">
+<?php   } else if($this->session->userdata('akses') == 'Tutor'){ ?>
+<body class="theme-cyan">
+<?php   }?>
 <?php
 /*
  * Variabel $headernya diambil dari libraries template.php
