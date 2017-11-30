@@ -14,7 +14,7 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="kelas">Data Kelas</a>
+                    <a href="<?php echo base_url();?>Kelas/v_tutor_kelas">Data Kelas</a>
                 </li>
             </ul>
         </li>
@@ -25,7 +25,7 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="presensi">Data Presensi</a>
+                    <a href="<?php echo base_url();?>Presensi/v_presensi_tutor">Data Presensi</a>
                 </li>
                 <li>
                     <a href="presensi/create.php">Tambah Presensi</a>

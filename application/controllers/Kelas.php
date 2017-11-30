@@ -23,4 +23,9 @@ public function __construct()
     public function v_tambahkelas(){
         $this->klas_page('laman/v_addkelas');
     }
+    public function v_tutor_kelas(){
+        $query = $this->M_Kelas->getKelas();
+        $data['tabelKelas'] = $query->result();
+        $this->klas_page('laman/v_kelas',$data);
+    }
 }
