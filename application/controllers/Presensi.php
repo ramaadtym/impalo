@@ -32,4 +32,5 @@ class Presensi extends MY_Controller
         $data['tabel'] = $model_presensi->getAllPresensi();
         $this->presensi_page('laman/v_presensi',$data);
     }
+
 }

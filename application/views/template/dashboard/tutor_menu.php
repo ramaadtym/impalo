@@ -28,7 +28,7 @@
                     <a href="<?php echo base_url();?>Presensi/v_presensi_tutor">Data Presensi</a>
                 </li>
                 <li>
-                    <a href="presensi/create.php">Tambah Presensi</a>
+                    <a href="<?php echo base_url();?>Presensi/tambah">Tambah Presensi</a>
                 </li>
             </ul>
         </li>
