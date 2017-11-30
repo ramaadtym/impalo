@@ -44,7 +44,7 @@ class Utama extends MY_Controller
                 $this->session->set_userdata('nama',$nama);
                 $this->session->set_userdata('nim',$nim);
             }
-            else if ($cek->user_level == "Tutor"){
+            else if ($role['user_level'] == "Tutor"){
                 $this->session->set_userdata('akses','Tutor');
                 $nama = $role['nama'];
                 $nim = $role['nim'];
@@ -59,7 +59,7 @@ class Utama extends MY_Controller
             redirect('Utama/Dashboard');
         }
         else{
-            print_r($cek->result()); 
+            echo "Waw";
         }
 
     }
@@ -81,7 +81,11 @@ class Utama extends MY_Controller
                 'jumlahMahasiswa' => $queryMahasiswa->num_rows(),
                 'jumlahTutor' => $queryTutor->num_rows()
         );
-        $this->dashboard_page('laman/v_dashboard',$data);
+        if($this->session->userdata('akses')=="Admin"){
+            $this->dashboard_page('laman/v_dashboard',$data);
+        }else if($this->session->userdata('akses')=="Tutor"){
+            $this->tutor_dash('laman/v_dashboard',$data);
+        }
     }
 }
 

@@ -75,5 +75,11 @@ class MY_Controller extends CI_Controller
         $this->load->view('template/mahasiswa/index', $data);
     }
 
+    //Halaman Tutor
+    function tutor_dash($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/tutor/index_dash', $data);
+    }
+
 
 }
