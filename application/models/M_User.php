@@ -21,5 +21,19 @@ class M_User extends CI_Model{
         $kue = $this->db->get();
         return $kue;
     }
+    function getAllUser()
+    {
+        $kue = $this->db->get('user');
+        return $kue;
+    }
+    function tambahUser($data,$datadetil)
+    {
+        $this->db->insert('user', $data);
+        $this->db->insert('detil_user', $datadetil);
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;
+        }
+        return FALSE;
+    }
 }
 ?>

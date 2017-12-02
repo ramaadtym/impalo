@@ -46,6 +46,7 @@ class Presensi extends MY_Controller
         {
             $this->session->set_flashdata('error', 'Hapus Gagal');
         }
+        redirect('Presensi','refresh');
     }
 
 }

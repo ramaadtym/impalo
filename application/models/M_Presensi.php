@@ -18,6 +18,15 @@ class M_Presensi extends CI_Model {
         }
         return FALSE;
 	}	
+	public function pelaporanGaji()
+	{
+		$query = $this->db->query("SELECT kode_tutor, nama,  count(*) as jaga FROM absensi
+									JOIN tutor using (kode_tutor)
+									JOIN detil_user using (nim)
+									where admin_acc is not null
+									group by kode_tutor");
+		return $query;
+	}
 
 }
 

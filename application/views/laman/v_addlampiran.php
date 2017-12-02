@@ -19,7 +19,7 @@
     <div class="container-fluid">
         <!-- Input -->
         <!-- STEP 2 -->
-        <form id="form_advanced_validation" method="POST" enctype="multipart/form-data">
+        <form id="form_advanced_validation" action="<?php echo base_url(); ?>Lampiran/do_unggah_lampiran" method="POST" enctype="multipart/form-data">
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">

@@ -37,9 +37,22 @@
                             </thead>
                             <tbody>
                             <?php
-                            /*// put your code here
-                            require ("../../fungsi/pelaporan.php");
-                            tampildatahonor($connect);*/
+                            foreach ($tabelGaji as $value) {
+                                echo "<tr>";
+                                echo "<td>$value->kode_tutor</td>";
+                                echo "<td>$value->nama</td>";
+                                echo "<td>$value->jaga</td>";
+                                $jaga = $value->jaga;
+                                if ($jaga > intval(10)){
+                                    $totalhonor = (25000*$jaga) + 150000;
+                                }
+                                else
+                                {
+                                    $totalhonor = 25000*$jaga;
+                                }
+                                echo "<td>$totalhonor</td>";
+                                echo "</tr>";
+                            }
                             ?>
                             </tbody>
                         </table>

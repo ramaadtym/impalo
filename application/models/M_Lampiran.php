@@ -18,6 +18,7 @@ class M_Lampiran extends CI_Model
        return $query->result();
     }
     function hapusLampiran($id){
+        
         $this->db->delete('lampiran','id',$id);
         return $this->db->affected_rows() > 0;
     }

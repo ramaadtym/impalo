@@ -18,13 +18,13 @@
 <section class="content">
     <div class="container-fluid">
         <!-- Input -->
-        <form id="form_advanced_validation" action="../../fungsi/pendaftaran.php?addUser=tambahuser" method="POST">
+        <form id="form_advanced_validation" action="<?php echo base_url(); ?>User/tambah<?php echo $jenis; ?>" method="POST">
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Tambah Admin
+                                Tambah <?php echo $jenis; ?>
                             </h2>
                         </div>
                         <div class="body">

@@ -23,7 +23,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            DATA USER
+                            DATA USER 
                         </h2>
                     </div>
                     <div class="body">
@@ -40,39 +40,16 @@
                             </thead>
                             <tbody>
                             <?php
-                            /*// put your code here
-                            require '../../koneksi.php';
-                            $sql = "SELECT * FROM user";
-                            $user = mysqli_query($connect, "SELECT * FROM user");
-                            if(mysqli_num_rows($user) == 0){
-                                //echo '<tr><td colspan="8"><center>Data Tidak Tersedia.</center></td></tr>';
-                            } else {
-                                foreach ($user as $value) {
+                            foreach ($tabelUser as $value) {
                                     echo "
                                 <tr>
-                                    <td>".$value['nim']."</td>
-                                    <td>".$value['username']."</td>
-                                    <td>".$value['email']."</td>
-                                    <td>".$value['user_level']."</td>
-                                    <td>".$value['last_login']."</td>
-                                    <td>
-                                        <a href='edit.php?nim=$value[nim]'>
-                                            <button type=\"button\" class=\"btn btn-primary waves-effect\">
-                                                <i class=\"material-icons\">edit</i>
-                                            </button>
-                                        </a>
-                                        <a href='delete.php?nim=$value[nim]'>
-                                            <button type=\"button\" class=\"btn btn-danger waves-effect\">
-                                                <i class=\"material-icons\">delete_forever</i>
-                                            </button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            ";
+                                    <td>".$value->nim."</td>
+                                    <td>".$value->username."</td>
+                                    <td>".$value->email."</td>
+                                    <td>".$value->user_level."</td>
+                                    <td>".$value->last_login."</td>
+                                </tr>";
                                 }
-                            }*/
-                           /* require ("../../fungsi/pendaftaran.php");
-                            viewUser($connect);*/
                             ?>
                             </tbody>
                         </table>

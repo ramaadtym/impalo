@@ -46,9 +46,6 @@
                             </thead>
                             <tbody>
                             <?php
-                           /* // put your code here
-                            require '../../koneksi.php';
-                            //fungsi untuk mengkonversi size file
                             function formatBytes($bytes, $precision = 2) {
                                 $units = array('B', 'KB', 'MB', 'GB', 'TB');
                                 $bytes = max($bytes, 0);
@@ -57,29 +54,22 @@
                                 $bytes /= pow(1024, $pow);
                                 return round($bytes, $precision) . ' ' . $units[$pow];
                             }
-                            $sql = "SELECT l.id id, l.tanggal tanggal, d.nama nama, l.kategori kategori, l.tipe tipe, l.ukuran ukuran, l.file file, l.nama namafile
-                                    FROM lampiran l
-                                    JOIN detil_user d ON (d.nim = l.uploader)";
-                            $lampiran = mysqli_query($connect, $sql);
-                            if(mysqli_num_rows($lampiran) == 0){
-                                //echo '<tr><td colspan="3"><center>Data Tidak Tersedia.</center></td></tr>';
-                            } else {
-                                foreach ($lampiran as $value) {
+                            foreach ($tabelLampiran as $value) {
                                     echo "
                                 <tr>
-                                    <td>".$value['tanggal']."</td>
-                                    <td>".$value['namafile']."</td>
-                                    <td>".$value['kategori']."</td>
-                                    <td>".$value['tipe']."</td>
-                                    <td>".formatBytes($value['ukuran'])."</td>
-                                    <td>".$value['nama']."</td>
+                                    <td>".$value->tanggal."</td>
+                                    <td>".$value->file."</td>
+                                    <td>".$value->kategori."</td>
+                                    <td>".$value->tipe."</td>
+                                    <td>".formatBytes($value->ukuran)."</td>
+                                    <td>".$value->nama."</td>
                                     <td>
-                                        <a href='../../upload/$value[file]'>
+                                        <a href='".base_url()."assets/upload/".$value->file."'>
                                             <button type=\"button\" class=\"btn btn-primary waves-effect\">
                                                 <i class=\"material-icons\">file_download</i>
                                             </button>
                                         </a>
-                                        <a href='delete.php?id=$value[id]'>
+                                        <a href='".base_url()."Lampiran/do_hapus_lampiran/".$value->id."'>
                                             <button type=\"button\" class=\"btn btn-danger waves-effect\">
                                                 <i class=\"material-icons\">delete_forever</i>
                                             </button>
@@ -87,8 +77,7 @@
                                     </td>
                                 </tr>
                             ";
-                                }
-                            }*/
+                            }
                             ?>
                             </tbody>
                         </table>
