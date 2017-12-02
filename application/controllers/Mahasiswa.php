@@ -48,8 +48,10 @@
  		}
  	}
  	public function jadwal(){
-
-        $this->mhs_jdwl('laman/v_jdwl');
+        $nim = $this->session->userdata('nim');
+        $jdwl = $this->M_Mahasiswa->getJadwal($nim);
+        $data['jadwal'] = $jdwl->result();
+        $this->mhs_jdwl('laman/v_jdwl',$data);
     }
  
  }

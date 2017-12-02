@@ -48,23 +48,20 @@
                             </thead>
                             <tbody>
                             <?php
-                            /*if(mysqli_num_rows($kelas) == 0){
-                                //echo '<tr><td colspan="5"><em>Data Tidak Tersedia.</em></td></tr>';
-                            } else {
-                                foreach ($kelas as $value) {
-                                    echo "
-                                            <tr>
-                                                <td>".$value['kode_kelas']."</td>
-                                                <td>".$value['nama_matkul']."</td>
-                                                <td>".$value['hari']."</td>
-                                                <td>".$value['jam']."</td>
-                                                <td>".$value['kode_tutor']."</td>
-                                                <td>".$value['nama']."</td>
-                                            </tr>
-                                        ";
-                                }
+                            if($jadwal == NULL){
+                                echo "Jadwal Anda belum dimasukkan";
                             }
-                            */?>
+                            foreach ($jadwal as $obj) {
+                                echo "<tr>";
+                                echo "<td>$obj->kode_kelas</td>";
+                                echo "<td>$obj->nama_matkul</td>";
+                                echo "<td>$obj->hari</td>";
+                                echo "<td>$obj->jam</td>";
+                                echo "<td>$obj->kode_tutor</td>";
+                                echo "<td>$obj->nama</td>";
+
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>

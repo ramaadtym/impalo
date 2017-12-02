@@ -42,4 +42,5 @@ class M_Kelas extends CI_Model
         }
         return FALSE;
     }
+
 }
