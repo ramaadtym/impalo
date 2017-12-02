@@ -35,7 +35,6 @@
                                 <th>Nama</th>
                                 <th>Mata Kuliah 1</th>
                                 <th>Mata Kuliah 2</th>
-                                <th>Aksi</th>
                             </tr>
                             </thead>
                             <tbody>

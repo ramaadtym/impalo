@@ -35,7 +35,7 @@
                                 <th>Email</th>
                                 <th>User Level</th>
                                 <th>Last Login</th>
-                                <th>Aksi</th>
+
                             </tr>
                             </thead>
                             <tbody>
