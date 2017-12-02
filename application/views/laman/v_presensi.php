@@ -59,6 +59,11 @@
                                 <td><?php echo $obj->admin_acc; ?></td>
                                 <td>
                                     <a href="<?php echo base_url() . 'Presensi/editPresensi/' .$obj->id_absensi;?>">
+                                        <button type="button" class="btn btn-default waves-effect">
+                                            <i class="material-icons">check_circle</i>
+                                        </button>
+                                    </a>
+                                    <a href="<?php echo base_url() . 'Presensi/editPresensi/' .$obj->id_absensi;?>">
                                         <button type="button" class="btn btn-primary waves-effect">
                                             <i class="material-icons">edit</i>
                                         </button>
