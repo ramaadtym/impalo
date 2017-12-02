@@ -26,7 +26,7 @@
 </section>
 <section class="content">
     <div class="container-fluid">
-            <form id="form_advanced_validation" action="../../fungsi/pendaftaran.php?editPresensi=edit&cari=<?php /*echo $search*/ ; ?>." method="POST" enctype="multipart/form-data">
+            <form id="form_advanced_validation" action="<?php echo base_url(); ?>Presensi/suntingPresensi/<?php echo $dataPresensi->id_absensi; ?>" method="POST" enctype="multipart/form-data">
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card">

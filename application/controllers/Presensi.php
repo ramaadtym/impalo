@@ -55,5 +55,8 @@ class Presensi extends MY_Controller
         $data['dataKelas'] = $this->M_Kelas->getSpecifiedKelas($absen->kode_kelas)->result()[0];
         $this->editpresensi_page('laman/v_editpresensi',$data);
     }
+    public function suntingPresensi($id_absensi){
+        
+    }
 
 }
