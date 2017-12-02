@@ -58,6 +58,10 @@ class MY_Controller extends CI_Controller
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/presensi/index_add', $data);
     }
+    function editpresensi_page($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/presensi/index_edit', $data);
+    }
     function addadmin_page($content, $data = NULL){
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/admin/index', $data);

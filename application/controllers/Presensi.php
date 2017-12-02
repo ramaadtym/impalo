@@ -47,5 +47,8 @@ class Presensi extends MY_Controller
             $this->session->set_flashdata('error', 'Hapus Gagal');
         }
     }
+    public function editPresensi(){
+	    $this->editpresensi_page('laman/v_editpresensi');
+    }
 
 }
