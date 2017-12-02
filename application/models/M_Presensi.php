@@ -8,8 +8,9 @@ class M_Presensi extends CI_Model {
 		$query = $this->db->get('absensi');
 		return $query->result();
 	}	
-	public function getPresensi($kode_)
+	public function getPresensi($id_absensi)
 	{
+		$this->db->where('id_absensi', $id_absensi);
 		$query = $this->db->get('absensi');
 		return $query->result();
 	}	
