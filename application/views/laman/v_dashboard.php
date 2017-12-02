@@ -16,6 +16,8 @@ $this->load->view('template/navbar');
             $this->load->view('template/dashboard/adm_menu');
         }else if($this->session->userdata('akses') == 'Tutor'){
             $this->load->view('template/dashboard/tutor_menu');
+        }else if($this->session->userdata('akses') == 'Mahasiswa'){
+            $this->load->view('template/dashboard/mhs_menu');
         }
 
         ?>
