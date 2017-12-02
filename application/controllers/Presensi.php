@@ -56,6 +56,9 @@ class Presensi extends MY_Controller
         $this->editpresensi_page('laman/v_editpresensi',$data);
     }
     public function suntingPresensi($id_absensi){
+        $data = array();
+        print("<pre>".print_r($_POST,true)."</pre>");
+        
         
     }
 
