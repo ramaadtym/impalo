@@ -47,6 +47,10 @@
  			redirect('/','refresh');
  		}
  	}
+ 	public function jadwal(){
+
+        $this->mhs_jdwl('laman/v_jdwl');
+    }
  
  }
  

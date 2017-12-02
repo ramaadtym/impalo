@@ -48,5 +48,8 @@ class Presensi extends MY_Controller
         }
         redirect('Presensi','refresh');
     }
+    public function editPresensi(){
+	    $this->editpresensi_page('laman/v_editpresensi');
+    }
 
 }

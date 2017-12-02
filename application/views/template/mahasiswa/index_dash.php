@@ -37,7 +37,9 @@
 <body class="theme-blue-grey">
 <?php   } else if($this->session->userdata('akses') == 'Tutor'){ ?>
 <body class="theme-cyan">
-<?php   } ?>
+<?php   } else if($this->session->userdata('akses') == 'Mahasiswa'){?>
+<body class="theme-pink">
+<?php }?>
 <?php
 /*
  * Variabel $headernya diambil dari libraries template.php

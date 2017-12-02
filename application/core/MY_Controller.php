@@ -58,6 +58,10 @@ class MY_Controller extends CI_Controller
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/presensi/index_add', $data);
     }
+    function editpresensi_page($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/presensi/index_edit', $data);
+    }
     function addadmin_page($content, $data = NULL){
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/admin/index', $data);
@@ -83,6 +87,10 @@ class MY_Controller extends CI_Controller
     function mhs_dash($content, $data = NULL){
         $data['content'] = $this->load->view($content, $data, TRUE);
         $this->load->view('template/mahasiswa/index_dash', $data);
+    }
+    function mhs_jdwl($content, $data = NULL){
+        $data['content'] = $this->load->view($content, $data, TRUE);
+        $this->load->view('template/mahasiswa/index_jdwl', $data);
     }
 
 

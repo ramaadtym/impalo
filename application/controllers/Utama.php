@@ -84,7 +84,7 @@ class Utama extends MY_Controller
         }else if($this->session->userdata('akses')=="Tutor"){
             $this->tutor_dash('laman/v_dashboard',$data);
         }else if($this->session->userdata('akses')=="Mahasiswa"){
-            $this->tutor_dash('laman/v_dashboard',$data);
+            $this->mhs_dash('laman/v_dashboard',$data);
         }
     }
 }
