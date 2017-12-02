@@ -18,7 +18,7 @@
 <section class="content">
     <div class="container-fluid">
         <!-- Input -->
-        <form id="form_advanced_validation" action="../../fungsi/kurikulum.php?tambahkelas=tambah" method="POST">
+        <form id="form_advanced_validation" action="<?php echo base_url();?>Kelas/tambahKelas" method="POST">
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
@@ -94,7 +94,7 @@
                                     <select class="selectpicker form-control show-tick" data-live-search="true" data-max-options="5" name="data[]" multiple="multiple">
                                     <option value="">-- Pilih Mahasiswa --</option>
                                         <?php
-                                        foreach ($tabelTutor as $obj) {
+                                        foreach ($tabelMahasiswa as $obj) {
                                             ?>
                                         <option value="<?php echo $obj->nim; ?>"><?php echo  $obj->nama; ?></option>
                                        <?php } ?>

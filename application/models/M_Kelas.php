@@ -17,16 +17,16 @@ class M_Kelas extends CI_Model
         return $query;
     }
 
-    public function tambahKelas($data)
+    public function tambahKelas($data,$datamhs)
     {
-//        kode_kelas
-//        kode_matkul
-//        kode_tutor
-//        hari
-//        jam
-//        group_line
-//        tahun
-        $this->db->insert('matkul', $data);
+        $this->db->insert('kelas', $data);
+        foreach ($datamhs as $obj) {
+        	$mhs = array(
+        		'kode_kelas' => $data['kode_kelas'], 
+        		'nim' => $obj
+        		);
+        	$this->db->insert('detail_kelas', $mhs);
+        }
         if ($this->db->affected_rows() > 0) {
             return TRUE;
         }

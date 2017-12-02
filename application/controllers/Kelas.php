@@ -24,6 +24,20 @@ public function __construct()
         $this->klas_page('laman/v_kelas',$data);
     }
     public function tambahKelas(){
+		 
+		$data['kode_kelas'] = $this->input->post('kode_kelas');
+    	$data['kode_matkul'] = $this->input->post('kode_matkul');
+    	$data['kode_tutor'] = $this->input->post('kode_tutor');
+    	$data['hari'] = $this->input->post('hari');
+    	$data['jam'] = $this->input->post('jam');
+    	$data['group_line'] = $this->input->post('group_line');
+    	$data['tahun'] = $this->input->post('tahun');
+    	$datamhs = $this->input->post('data');
+    	$status = $this->M_Kelas->tambahKelas($data,$datamhs);
+    	if ($status == TRUE){
+    		$this->session->set_flashdata('success', 'Tambah Berhasil');
+    		redirect('Kelas','');
+    	}
     }
     public function v_tambahkelas(){
         $query = $this->M_Matakuliah->getMataKuliah();

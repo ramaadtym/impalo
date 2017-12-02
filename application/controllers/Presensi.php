@@ -12,24 +12,40 @@ class Presensi extends MY_Controller
 	{
 		parent::__construct();
 		//Do your magic here
-		$this->load->model('M_Presensi');
+        $this->load->model('M_Presensi');
+        $this->load->model('M_Mahasiswa');
+        $this->load->model('M_Kelas');
 	}
     public function index()
     {
         if (!($this->session->userdata('masuk') && $this->session->userdata('akses') == "Admin")){
             redirect('/','refresh');
         }
-        $model_presensi = new M_Presensi();
-        $data['tabel'] = $model_presensi->getAllPresensi();
+        $data['tabel'] = $this->M_Presensi->getAllPresensi();
         $this->presensi_page('laman/v_presensi',$data);
     }
     public function tambah(){
-        $this->addpresensi_page('laman/v_addpresensi');
+        if (!($this->session->userdata('masuk') && $this->session->userdata('akses') == "Admin")){
+            redirect('/','refresh');
+        }
+        $query = $this->M_Kelas->getKelas();
+        $data['tabelKelas'] = $query->result();
+        $query = $this->M_Mahasiswa->getMahasiswa();
+        $data['tabelMahasiswa'] = $query->result();
+        $this->addpresensi_page('laman/v_addpresensi',$data);
     }
-    public function v_presensi_tutor(){
-        $model_presensi = new M_Presensi();
-        $data['tabel'] = $model_presensi->getAllPresensi();
-        $this->presensi_page('laman/v_presensi',$data);
+    public function hapusPresensi($id_absensi){
+        if (!($this->session->userdata('masuk') && $this->session->userdata('akses') == "Admin")){
+            redirect('/','refresh');
+        }
+        $status = $this->M_Presensi->hapusPresensi($id_absensi);
+        if ($status == TRUE){
+            $this->session->set_flashdata('success', 'Hapus Berhasil');
+        }
+        else
+        {
+            $this->session->set_flashdata('error', 'Hapus Gagal');
+        }
     }
 
 }

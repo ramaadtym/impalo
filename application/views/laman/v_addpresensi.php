@@ -40,14 +40,9 @@
                                         <select class="form-control show-tick" name="kode_kelas" required>
                                             <option value="">-- Pilih Kelas --</option>
                                             <?php
-                                            $sql = "SELECT kode_kelas from kelas";
-                                            $kelas = mysqli_query($connect, $sql);
-                                            if (mysqli_num_rows($kelas) == 0) {
-                                                echo '-- Data Kelas Tidak Tersedia --';
-                                            } else {
-                                                foreach ($kelas as $value) {
-                                                    echo "<option value='" . $value['kode_kelas'] . "'>" . $value['kode_kelas'] . "</option>";
-                                                }
+                                            foreach ($tabelKelas as $value) {
+                                                    echo "<option value='" . $value->kode_kelas . "'>" . $value->kode_kelas . "</option>";
+                                            
                                             }
                                             ?>
                                         </select>
@@ -58,11 +53,11 @@
                                     <select class="form-control show-tick" name="status_pertemuan" required>
                                         <option value="">-- Pilih Status Pertemuan --</option>
                                         <?php
-                                        /*                                        $status = ['Tetap', 'Pengganti', 'Responsi'];
-                                                                                foreach ($status as $status) {
-                                                                                    echo "<option value='".$status."'>".$status."</option>";
-                                                                                }
-                                                                                */ ?>
+                                        $status = ['Tetap', 'Pengganti', 'Responsi'];
+                                        foreach ($status as $status) {
+                                            echo "<option value='".$status."'>".$status."</option>";
+                                        }
+                                         ?>
                                     </select>
                                 </div>
                                 <div class="col-sm-6">
@@ -107,20 +102,10 @@
                                     <select class="selectpicker form-control show-tick" data-live-search="true"
                                             data-max-options="5" name="data[]" multiple="multiple">
                                         <?php
-                                        $sql = "
-                                                SELECT *
-                                                FROM user u
-                                                JOIN detil_user d ON (u.nim = d.nim)
-                                                WHERE user_level='Mahasiswa'";
-                                        $mahasiswa = mysqli_query($connect, $sql);
-                                        if (mysqli_num_rows($mahasiswa) == 0) {
-                                            echo '<option>-- Data Mahasiswa Tidak Tersedia --</option>';
-                                        } else {
-                                            foreach ($mahasiswa as $value) {
-                                                echo "<option value='" . $value['nim'] . "'>" . $value['nama'] . "</option>";
-                                            }
-                                        }
-                                        ?>
+                                        foreach ($tabelMahasiswa as $obj) {
+                                            ?>
+                                        <option value="<?php echo $obj->nim; ?>"><?php echo  $obj->nama; ?></option>
+                                       <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-sm-6">

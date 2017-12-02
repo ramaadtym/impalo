@@ -3,12 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_Presensi extends CI_Model {
 
-public function getAllPresensi($value='')
+	public function getAllPresensi($value='')
 	{
-		// $this->db->join('detil_user', 'tutor.nim = detil_user.nim', 'left');
-		// $this->db->join('tutor', 'absensi.kode_tutor = tutor.kode_tutor', 'left');
 		$query = $this->db->get('absensi');
 		return $query->result();
+	}	
+	public function hapusPresensi($id_absensi)
+	{
+		$this->db->where('id_absensi', $id_absensi);
+		$query = $this->db->delete('absensi');
+
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;
+        }
+        return FALSE;
 	}	
 
 }

@@ -56,25 +56,21 @@
                                 <td><?php echo $obj->status_acc; ?></td>
                                 <td><?php echo $obj->admin_acc; ?></td>
                                 <td>
-                                    <a href="">
-                                        <button type="button" class="btn btn-default waves-effect">
-                                            <i class="material-icons">pageview</i>
-                                        </button>
-                                    </a>
-                                    <a href="">
+                                    <a href="<?php echo base_url() . 'Presensi/v_suntingPresensi/'. $obj->id_absensi;?>">
                                         <button type="button" class="btn btn-primary waves-effect">
                                             <i class="material-icons">edit</i>
                                         </button>
                                     </a>
-                                    <a href="">
+                                    <a href="<?php echo base_url() . 'Presensi/hapusPresensi/'. $obj->id_absensi;?>">
                                         <button type="button" class="btn btn-danger waves-effect">
                                             <i class="material-icons">delete_forever</i>
                                         </button>
                                     </a>
                                 </td>
                                 </tr>
-                                <?
+                                <?php
                             } ?>
+
                             </tbody>
                         </table>
                     </div>
@@ -84,4 +80,3 @@
         <!-- #END# Basic Examples -->
     </div>
 </section>
-
