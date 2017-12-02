@@ -10,8 +10,6 @@ class Tutor extends MY_Controller
 {
 
     public function index(){
-    	/*$query = $this->M_Kelas->getKelas();*/
-    	/*$data['tabelKelas'] = $query->result();*/
         $this->tutor_page('laman/v_tutor'/*,$data*/);
     }
     public function v_tambahkelas(){

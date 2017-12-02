@@ -5,8 +5,13 @@
  * Date: 29/09/2017
  * Time: 20:58
  */
-class M_login extends CI_Model{
-    function ceklogin($u,$p)
+class M_User extends CI_Model{
+    public function __construct()
+    {
+        parent::__construct();
+
+    }
+    function validasiLogin($u, $p)
     {
         $this->db->select('*');
         $this->db->from('user');
@@ -15,15 +20,6 @@ class M_login extends CI_Model{
         $this->db->where('password', $p);
         $kue = $this->db->get();
         return $kue;
-        // print_r($kue->result());
-//        if ($kue->num_rows() > 0){
-//        	return $kue->result()[0];
-//        }
-//        else
-//        {
-//        	return FALSE;
-//        }
-//    }
     }
 }
 ?>

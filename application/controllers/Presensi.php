@@ -27,7 +27,6 @@ class Presensi extends MY_Controller
         $this->addpresensi_page('laman/v_addpresensi');
     }
     public function v_presensi_tutor(){
-
         $model_presensi = new M_Presensi();
         $data['tabel'] = $model_presensi->getAllPresensi();
         $this->presensi_page('laman/v_presensi',$data);

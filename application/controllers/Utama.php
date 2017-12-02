@@ -5,7 +5,7 @@ class Utama extends MY_Controller
 {
     function __construct(){
         parent::__construct();
-        $this->load->model('M_login');
+        $this->load->model('M_User');
         $this->load->model('M_Matakuliah');
         $this->load->model('M_Kelas');
         $this->load->model('M_Mahasiswa');
@@ -22,8 +22,8 @@ class Utama extends MY_Controller
     function Login(){
         $username = $this->input->post('nim');
         $pwd = sha1($this->input->post('pwd'));
-        $cek = $this->M_login->ceklogin($username,$pwd); //load model login
-
+        $cek = $this->M_User->validasiLogin($username,$pwd); //load model login
+        echo "cek";
         if($cek->num_rows() > 0){
             $this->session->set_userdata('masuk',true);
             $this->session->set_userdata('user',$username);
@@ -59,7 +59,7 @@ class Utama extends MY_Controller
             redirect('Utama/Dashboard');
         }
         else{
-            echo "Waw";
+            var_dump($_SESSION);
         }
 
     }

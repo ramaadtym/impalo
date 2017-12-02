@@ -43,7 +43,11 @@
                                     <label class="form-label">Mata Kuliah</label>
                                     <select class="form-control show-tick" name="kode_matkul" required>
                                         <option value="">-- Pilih Mata Kuliah --</option>
-
+                                        <?php
+                                        foreach ($tabelMatkul as $obj) {
+                                            ?>
+                                        <option value="<?php echo $obj->kode_matkul; ?>"><?php echo  $obj->kode_matkul; ?></option>
+                                       <?php } ?>
                                     </select>
                             </div>
                                 <div class="col-sm-12">
@@ -51,20 +55,10 @@
                                     <select class="form-control show-tick" name="kode_tutor" required>
                                         <option value="">-- Pilih Tutor --</option>
                                         <?php
-                                        $sql = "
-                                        SELECT *
-                                        FROM user u
-                                        JOIN detil_user d ON (u.nim = d.nim)
-                                        JOIN tutor t ON (u.nim = t.nim)";
-                                        $tutor = mysqli_query($connect, $sql);
-                                        if(mysqli_num_rows($tutor) == 0){
-                                            echo '<option>-- Data Tutor Tidak Tersedia --</option>';
-                                        } else {
-                                            foreach ($tutor as $value) {
-                                                echo "<option value='".$value['kode_tutor']."'>".$value['nama']." (".$value['matkul1']." | ".$value['matkul2'].")"."</option>";
-                                            }
-                                        }
-                                        ?>
+                                        foreach ($tabelTutor as $obj) {
+                                            ?>
+                                        <option value="<?php echo $obj->kode_tutor; ?>"><?php echo  $obj->kode_tutor; ?></option>
+                                       <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -98,21 +92,12 @@
                                         <b>Data Mahasiswa</b>
                                     </p>
                                     <select class="selectpicker form-control show-tick" data-live-search="true" data-max-options="5" name="data[]" multiple="multiple">
+                                    <option value="">-- Pilih Mahasiswa --</option>
                                         <?php
-                                        $sql = "
-                                                SELECT *
-                                                FROM user u
-                                                JOIN detil_user d ON (u.nim = d.nim)
-                                                WHERE user_level='Mahasiswa'";
-                                        $mahasiswa = mysqli_query($connect, $sql);
-                                        if(mysqli_num_rows($mahasiswa) == 0){
-                                            echo '<option>-- Data Mahasiswa Tidak Tersedia --</option>';
-                                        } else {
-                                            foreach ($mahasiswa as $value) {
-                                                echo "<option value='".$value['nim']."'>".$value['nama']."</option>";
-                                            }
-                                        }
-                                        ?>
+                                        foreach ($tabelTutor as $obj) {
+                                            ?>
+                                        <option value="<?php echo $obj->nim; ?>"><?php echo  $obj->nama; ?></option>
+                                       <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-sm-6">
