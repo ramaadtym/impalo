@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Kelola Mahasiswa</title>
+    <title>Dashboard - Tutor</title>
     <!-- Favicon-->
     <link rel="icon" href="<?php echo base_url(); ?>assets/favicon.ico" type="image/x-icon">
 
@@ -34,12 +34,10 @@
 
 </head>
 <?php if($this->session->userdata('akses') == 'Admin'){?>
-<body class="theme-blue-grey">
+    <body class="theme-blue-grey">
 <?php   } else if($this->session->userdata('akses') == 'Tutor'){ ?>
-<body class="theme-cyan">
-<?php   } else if($this->session->userdata('akses') == 'Mahasiswa'){?>
-    <body class="theme-pink">
-<?php }?>
+    <body class="theme-cyan">
+<?php   }?>
 <?php
 /*
  * Variabel $headernya diambil dari libraries template.php
