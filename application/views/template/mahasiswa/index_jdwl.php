@@ -38,7 +38,7 @@
 <?php   } else if($this->session->userdata('akses') == 'Tutor'){ ?>
 <body class="theme-cyan">
 <?php   } else if($this->session->userdata('akses') == 'Mahasiswa'){?>
-<body class="theme-pink">
+    <body class="theme-pink">
 <?php }?>
 <?php
 /*

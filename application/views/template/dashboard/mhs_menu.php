@@ -14,7 +14,7 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="jadwal">Data Jadwal</a>
+                    <a href="<?php echo base_url(); ?>Mahasiswa/jadwal">Data Jadwal</a>
                 </li>
             </ul>
         </li>
@@ -25,7 +25,7 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="lampiran">Data Lampiran</a>
+                    <a href="<?php echo base_url(); ?>Lampiran">Data Lampiran</a>
                 </li>
             </ul>
         </li>
