@@ -41,7 +41,6 @@
                                 <th>Jam</th>
                                 <th>Kode Tutor</th>
                                 <th>Nama Tutor</th>
-                                <th>Aksi</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -53,12 +52,6 @@
                                 echo "<td>$obj->jam</td>";
                                 echo "<td>$obj->kode_tutor</td>";
                                 echo "<td>$obj->nama</td>";
-                                echo "<td><a href='#'>
-                                        <button type='button' class='btn btn-default waves-effect'>
-                                            <i class='material-icons'>pageview</i>
-                                        </button></a>
-                                    </td>";
-                                echo "</tr>";
                             }
                             ?>
                             </tbody>

@@ -35,7 +35,6 @@
                                 <th>Jurusan</th>
                                 <th>Kelas</th>
                                 <th>ID Line</th>
-                                <th>Aksi</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -48,12 +47,7 @@
                                 echo "<td>$obj->jurusan</td>";
                                 echo "<td>$obj->kelas</td>";
                                 echo "<td>$obj->id_line</td>";
-                                echo "<td><a href='#'>
-                                        <button type='button' class='btn btn-default waves-effect'>
-                                            <i class='material-icons'>pageview</i>
-                                        </button></a>
-                                    </td>";
-                                echo "</tr>";
+
                             }
                             ?>
 
