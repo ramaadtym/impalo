@@ -52,7 +52,7 @@ class Lampiran extends MY_Controller
     }
 
 
-    private function do_hapus_lampiran($id){
+    public function do_hapus_lampiran($id){
         $this->M_Lampiran->hapusLampiran($id);
         redirect('Lampiran','refresh');
     }

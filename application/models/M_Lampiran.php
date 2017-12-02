@@ -18,8 +18,13 @@ class M_Lampiran extends CI_Model
        return $query->result();
     }
     function hapusLampiran($id){
-        
-        $this->db->delete('lampiran','id',$id);
+        $this->db->where('id', $id);
+        $fileinfo = $this->db->get('lampiran');
+        $fileinfo = $fileinfo->result();
+        $path = "./assets/upload/". $fileinfo[0]->file;
+        $this->db->where('id', $id);
+        $this->db->delete('lampiran');
+        $status = unlink($path);
         return $this->db->affected_rows() > 0;
     }
 }

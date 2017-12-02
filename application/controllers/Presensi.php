@@ -48,8 +48,12 @@ class Presensi extends MY_Controller
         }
         redirect('Presensi','refresh');
     }
-    public function editPresensi(){
-	    $this->editpresensi_page('laman/v_editpresensi');
+    public function editPresensi($id_absensi){
+        $absen = $this->M_Presensi->getPresensi($id_absensi);
+        $absen = $absen[0];
+        $data['dataPresensi'] = $absen;
+        $data['dataKelas'] = $this->M_Kelas->getSpecifiedKelas($absen->kode_kelas)->result()[0];
+        $this->editpresensi_page('laman/v_editpresensi',$data);
     }
 
 }
