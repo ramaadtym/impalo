@@ -34,7 +34,7 @@ class Lampiran extends MY_Controller
             $kategori = $this->input->post('kategori');
             $tipe = $file_spec['file_type'];
             $ukuran = $file_spec['file_size'];
-            $uploader = $this->session->userdata('nama');
+            $uploader = $this->session->userdata('nim');
             $file = $file_spec['file_name'];
             $data = array(
                 'tanggal' => $tanggal,
@@ -42,7 +42,7 @@ class Lampiran extends MY_Controller
                 'kategori' => $kategori,
                 'tipe' => $tipe,
                 'ukuran' => $ukuran,
-                'uploader' => $uploader,
+                'nim' => $uploader,
                 'file' => $file
             );
             $this->M_Lampiran->tambahLampiran($data);

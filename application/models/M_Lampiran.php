@@ -14,6 +14,7 @@ class M_Lampiran extends CI_Model
         return $this->db->affected_rows() > 0;
     }
     function lihatLampiran(){
+       $this->db->join('detil_user', 'lampiran.nim = detil_user.nim', 'left');
        $query = $this->db->get('lampiran');
        return $query->result();
     }
