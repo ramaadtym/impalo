@@ -69,7 +69,7 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="tutor">Data Tutor</a>
+                    <a href="<?php echo base_url();?>Tutor">Data Tutor</a>
                 </li>
             </ul>
         </li>
