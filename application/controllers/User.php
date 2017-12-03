@@ -21,7 +21,7 @@ public function __construct()
 
         $query = $this->M_User->getAllUser();
         $data['tabelUser'] = $query->result();
-        $this->tutor_page('laman/v_user',$data);
+        $this->user_page('laman/v_user',$data);
     }
     public function addAdmin(){
         $data['jenis'] = "Admin";

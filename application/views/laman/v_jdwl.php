@@ -35,6 +35,11 @@
                         </h2>
                     </div>
                     <div class="body">
+                        <?php
+                        if($jadwal == NULL) {
+                            echo "Jadwal Anda belum dimasukkan";
+                        }else{
+                        ?>
                         <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                             <thead>
                             <tr>
@@ -48,18 +53,16 @@
                             </thead>
                             <tbody>
                             <?php
-                            if($jadwal == NULL){
-                                echo "Jadwal Anda belum dimasukkan";
-                            }
-                            foreach ($jadwal as $obj) {
-                                echo "<tr>";
-                                echo "<td>$obj->kode_kelas</td>";
-                                echo "<td>$obj->nama_matkul</td>";
-                                echo "<td>$obj->hari</td>";
-                                echo "<td>$obj->jam</td>";
-                                echo "<td>$obj->kode_tutor</td>";
-                                echo "<td>$obj->nama</td>";
+                                foreach ($jadwal as $obj) {
+                                    echo "<tr>";
+                                    echo "<td>$obj->kode_kelas</td>";
+                                    echo "<td>$obj->nama_matkul</td>";
+                                    echo "<td>$obj->hari</td>";
+                                    echo "<td>$obj->jam</td>";
+                                    echo "<td>$obj->kode_tutor</td>";
+                                    echo "<td>$obj->nama</td>";
 
+                                }
                             }
                             ?>
                             </tbody>
