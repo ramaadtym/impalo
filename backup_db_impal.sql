@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 03, 2017 at 10:08 PM
+-- Generation Time: Dec 03, 2017 at 10:03 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -216,8 +216,7 @@ INSERT INTO `detil_user` (`nim`, `nama`, `jeniskelamin`, `tgl_lahir`, `fakultas`
 ('1301154646', 'kucing', 'Laki-laki', 'Minggu 03 Desember 2017', 'ILMU TERAPAN', 'S1 TEKNIK TELEKOMUNIKASI (LANJUTAN)', '', '1301154646', '1301154646'),
 ('1301151234', 'Fakhri Fauzan', 'Laki-laki', '12/02/1996', 'Informatika', 'S1 Teknik Informatika', 'IF 39 10', '@asdad', '1545645613514'),
 ('1301151234', 'Fakhri Fauzan', 'Laki-laki', '12/02/1996', 'Informatika', 'S1 Teknik Informatika', 'IF 39 10', '@asdad', '1545645613514'),
-('1301150001', 'Faishal Rachman', 'Laki-laki', '12/02/1996', 'Informatika', 'S1 Teknik Informatika', 'IF 39 06', '@asdada', '16549841'),
-('1301152222', 'Aziza Hayupratiwi', 'Perempuan', '12/02/1996', 'Informatika', 'S1 Teknik Informatika', 'IF 39 06', '@adskjhna', '0361456458');
+('1301150001', 'Faishal Rachman', 'Laki-laki', '12/02/1996', 'Informatika', 'S1 Teknik Informatika', 'IF 39 06', '@asdada', '16549841');
 
 -- --------------------------------------------------------
 
@@ -304,6 +303,20 @@ INSERT INTO `matkul` (`kode_matkul`, `nama_matkul`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `registrasi`
+--
+
+CREATE TABLE `registrasi` (
+  `id_registrasi` int(11) NOT NULL,
+  `nim` varchar(10) NOT NULL,
+  `kode_matkul` varchar(10) NOT NULL,
+  `kode_kelas` varchar(10) NOT NULL,
+  `paket` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tutor`
 --
 
@@ -372,7 +385,6 @@ INSERT INTO `user` (`nim`, `username`, `password`, `email`, `user_level`, `last_
 ('1301150040', 'jijah', '8cb2237d0679ca88db6464eac60da96345513964', 'jijah@gmail.com', 'Administrator', '2017-09-17 20:26:14'),
 ('1301150444', 'efadilazain', '7a2502635c04636a4ce113187c8ba58b6741bea5', 'efadilazain@gmail.com', 'Administrator', '2017-03-27 22:38:43'),
 ('1301151234', 'dummy_tutor', '46dc6ff47ee6e770ea47f4a69c274438642fa00d', 'cietutor@mail.com', 'Tutor', '0000-00-00 00:00:00'),
-('1301152222', 'dummy_mhs', 'ciemhs', 'mhs@mail.com', 'Mahasiswa', '0000-00-00 00:00:00'),
 ('1301154160', '1301154160', '959d62c1fcaae1133bca6b95bb3f99c5de02fe14', 'faishalr97@gmail.com', 'Tutor', '2017-05-06 11:42:56'),
 ('1301154164', 'septiandrd', 'cd0bdc9920bfcf6e6fca8ec57ac715547929b7cc', 'septiandrd@gmail.com', 'Tutor', '2017-05-19 12:25:36'),
 ('1301154200', '1301154200', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '', 'Mahasiswa', '0000-00-00 00:00:00'),
@@ -467,6 +479,15 @@ ALTER TABLE `matkul`
   ADD PRIMARY KEY (`kode_matkul`);
 
 --
+-- Indexes for table `registrasi`
+--
+ALTER TABLE `registrasi`
+  ADD PRIMARY KEY (`id_registrasi`),
+  ADD KEY `fk_registrasi_matkul` (`kode_matkul`),
+  ADD KEY `fk_registrasi_kelas` (`kode_kelas`),
+  ADD KEY `fk_registrasi_nim` (`nim`);
+
+--
 -- Indexes for table `tutor`
 --
 ALTER TABLE `tutor`
@@ -495,6 +516,11 @@ ALTER TABLE `absensi`
 --
 ALTER TABLE `lampiran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `registrasi`
+--
+ALTER TABLE `registrasi`
+  MODIFY `id_registrasi` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
