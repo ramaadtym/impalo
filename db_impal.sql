@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2017 at 06:58 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.24
+-- Generation Time: Dec 03, 2017 at 08:00 PM
+-- Server version: 10.1.24-MariaDB
+-- PHP Version: 7.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -258,17 +260,9 @@ CREATE TABLE `lampiran` (
   `ukuran` varchar(20) NOT NULL,
   `kategori` varchar(100) NOT NULL,
   `tanggal` date NOT NULL,
-  `uploader` varchar(255) NOT NULL,
+  `nim` varchar(10) NOT NULL,
   `file` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `lampiran`
---
-
-INSERT INTO `lampiran` (`id`, `nama`, `tipe`, `ukuran`, `kategori`, `tanggal`, `uploader`, `file`) VALUES
-(21, '[INFO] KUESIONER PENILAIAN TUTOR UTS1617', 'pdf', '121860', 'UMUM', '2017-03-23', '1301154374', '02_KUR_RES-UTS-MHS_II_2017_UTS1617.pdf'),
-(22, '[INFO] KUESIONER PELAYANAN BIMA KEPADA TUTOR UTS1617', 'pdf', '115416', 'UMUM', '2017-03-23', '1301154374', '02_KUR_RES-UTS-TUT_II_2017_UTS1617.pdf');
 
 -- --------------------------------------------------------
 
@@ -457,7 +451,8 @@ ALTER TABLE `kelas`
 -- Indexes for table `lampiran`
 --
 ALTER TABLE `lampiran`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `niminiminiminm` (`nim`);
 
 --
 -- Indexes for table `matkul`
@@ -502,7 +497,7 @@ ALTER TABLE `absensi`
 -- AUTO_INCREMENT for table `lampiran`
 --
 ALTER TABLE `lampiran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `registrasi`
 --
@@ -539,6 +534,12 @@ ALTER TABLE `kelas`
   ADD CONSTRAINT `fk_kelas_tutor` FOREIGN KEY (`kode_tutor`) REFERENCES `tutor` (`kode_tutor`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `lampiran`
+--
+ALTER TABLE `lampiran`
+  ADD CONSTRAINT `niminiminiminm` FOREIGN KEY (`nim`) REFERENCES `user` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `registrasi`
 --
 ALTER TABLE `registrasi`
@@ -553,6 +554,7 @@ ALTER TABLE `tutor`
   ADD CONSTRAINT `fk_nim_tutor` FOREIGN KEY (`nim`) REFERENCES `user` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_tutor_matkul1` FOREIGN KEY (`matkul1`) REFERENCES `matkul` (`kode_matkul`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_tutor_matkul2` FOREIGN KEY (`matkul2`) REFERENCES `matkul` (`kode_matkul`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
