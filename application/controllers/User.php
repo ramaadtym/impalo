@@ -14,6 +14,8 @@ public function __construct()
     parent::__construct();
     //Do your magic here
     $this->load->model('M_User');
+    $this->load->model('M_Tutor');
+    $this->load->model('M_Matakuliah');
 }
     public function index(){
 
@@ -26,23 +28,22 @@ public function __construct()
         $this->addadmin_page('laman/v_addadmin',$data);
     }
         public function addTutor(){
-        $data['jenis'] = "Tutor";
-        $this->addadmin_page('laman/v_addadmin',$data);
+        $query = $this->M_Matakuliah->getMataKuliah();
+        $data['tabelMatkul'] = $query->result();
+        $this->addadmin_page('laman/v_addtutor',$data);
     }
     public function addMhs(){
         $data['jenis'] = "Mahasiswa";
         $this->addadmin_page('laman/v_addadmin',$data);
     }
     public function tambahAdmin(){
-        print("<pre>".print_r($_POST,true)."</pre>");
         $data = array(
             'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
+            'password' => sha1($this->input->post('password')),
             'nim' => $this->input->post('nim'),
             'email' => $this->input->post('email'),
             'user_level' => "Administrator"
             );
-        print("<pre>".print_r($data,true)."</pre>");
         $data_detil = array();
         $data_detil['nim'] = $data['nim'];
         $data_detil['nama'] = $this->input->post('nama');
@@ -63,15 +64,13 @@ public function __construct()
         redirect('User');
     }
     public function tambahMahasiswa(){
-        print("<pre>".print_r($_POST,true)."</pre>");
         $data = array(
             'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
+            'password' => sha1($this->input->post('password')),
             'nim' => $this->input->post('nim'),
             'email' => $this->input->post('email'),
             'user_level' => "Mahasiswa"
             );
-        print("<pre>".print_r($data,true)."</pre>");
         $data_detil = array();
         $data_detil['nim'] = $data['nim'];
         $data_detil['nama'] = $this->input->post('nama');
@@ -92,15 +91,15 @@ public function __construct()
         redirect('User');
     }
     public function tambahTutor(){
-        print("<pre>".print_r($_POST,true)."</pre>");
+        // print("<pre>".print_r($_POST,true)."</pre>");
         $data = array(
             'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
+            'password' => sha1($this->input->post('password')),
             'nim' => $this->input->post('nim'),
             'email' => $this->input->post('email'),
             'user_level' => "Tutor"
             );
-        print("<pre>".print_r($data,true)."</pre>");
+        // print("<pre>".print_r($data,true)."</pre>");
         $data_detil = array();
         $data_detil['nim'] = $data['nim'];
         $data_detil['nama'] = $this->input->post('nama');
@@ -111,12 +110,22 @@ public function __construct()
         $data_detil['id_line'] = $this->input->post('id_line');
         $data_detil['telepon'] = $this->input->post('telepon');
         $status = $this->M_User->tambahUser($data,$data_detil);
+        $data_tutor = array();
+        $data_tutor['kode_tutor'] = $this->input->post('kode_tutor');
+        $data_tutor['matkul1'] = $this->input->post('matkul1');
+        $data_tutor['matkul2'] = $this->input->post('matkul2');
+        $data_tutor['nim'] = $data['nim'];
+
+        // print("<pre>".print_r($data_tutor,true)."</pre>");
+        $status = $this->M_Tutor->tambahTutor($data_tutor);
         if ($status == TRUE){
             $this->session->set_flashdata('success', 'Tambah Berhasil');
+            // echo "Berhasil";
         }
         else
         {
             $this->session->set_flashdata('error', 'Tambah Gagal');
+            // echo "Gagal";
         }
         redirect('User');
     }

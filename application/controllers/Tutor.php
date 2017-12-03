@@ -8,11 +8,17 @@
 
 class Tutor extends MY_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
+		
+		$this->load->model('M_Tutor');
+	}
 
     public function index(){
-        $this->tutor_page('laman/v_tutor'/*,$data*/);
+    	$query = $this->M_Tutor->getTutor();
+    	$data['tabelTutor'] = $query->result();
+        $this->tutor_page('laman/v_tutor',$data);
     }
-    public function v_tambahkelas(){
-        $this->klas_page('laman/v_addkelas');
-    }
+
 }

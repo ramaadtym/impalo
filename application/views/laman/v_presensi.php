@@ -58,11 +58,15 @@
                                 <td><?php echo $obj->status_acc; ?></td>
                                 <td><?php echo $obj->admin_acc; ?></td>
                                 <td>
-                                    <a href="<?php echo base_url() . 'Presensi/editPresensi/' .$obj->id_absensi;?>">
+                                <?php $role = $this->session->userdata('akses');
+
+                                if ($role == "Admin"){ ?>
+                                    <a href="<?php echo base_url() . 'Presensi/accPresensi/' .$obj->id_absensi;?>">
                                         <button type="button" class="btn btn-default waves-effect">
                                             <i class="material-icons">check_circle</i>
                                         </button>
                                     </a>
+                                    <?php } ?>
                                     <a href="<?php echo base_url() . 'Presensi/editPresensi/' .$obj->id_absensi;?>">
                                         <button type="button" class="btn btn-primary waves-effect">
                                             <i class="material-icons">edit</i>

@@ -48,9 +48,18 @@
                             </thead>
                             <tbody>
                             <?php
-                            // put your code here
-                            /*require ("../../fungsi/SDM.php");
-                            tampildatatutor($connect);*/
+                            foreach ($tabelTutor as $obj) {
+                                ?>
+                            <tr>
+                                <td><?php echo $obj->kode_tutor; ?></td>
+                                <td><?php echo $obj->nim; ?></td>
+                                <td><?php echo $obj->nama; ?></td>
+                                <td><?php echo $obj->matkul1; ?></td>
+                                <td><?php echo $obj->matkul2; ?></td>
+                            </tr>
+
+                                <?php 
+                            }
                             ?>
                             </tbody>
                         </table>

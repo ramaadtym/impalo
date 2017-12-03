@@ -2,7 +2,7 @@
     <ul class="list">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active">
-            <a href="javascript:void(0);">
+            <a href="<?php echo base_url(); ?>Utama/Dashboard">
                 <i class="material-icons">home</i>
                 <span>Home</span>
             </a>

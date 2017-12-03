@@ -20,9 +20,8 @@ class Lampiran extends MY_Controller
     }
     public function do_unggah_lampiran()
     {
-
-        print("<pre>".print_r($_POST,true)."</pre>");
-        print("<pre>".print_r($_FILES,true)."</pre>");
+        // print("<pre>".print_r($_POST,true)."</pre>");
+        // print("<pre>".print_r($_FILES,true)."</pre>");
         $config['upload_path'] = './assets/upload/';
         $config['allowed_types'] = 'pdf|doc|docx|ppt|pptx|jpg|png';
         $this->load->library('upload', $config);

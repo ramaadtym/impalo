@@ -72,15 +72,16 @@
                                             <button type=\"button\" class=\"btn btn-primary waves-effect\">
                                                 <i class=\"material-icons\">file_download</i>
                                             </button>
-                                        </a>
-                                        <a href='".base_url()."Lampiran/do_hapus_lampiran/".$value->id."'>
+                                        </a>";
+                                    $role = $this->session->userdata('akses');
+                                    if ($role == "Admin" || $role == "Tutor"){
+                                    echo "<a href='".base_url()."Lampiran/do_hapus_lampiran/".$value->id."'>
                                             <button type=\"button\" class=\"btn btn-danger waves-effect\">
                                                 <i class=\"material-icons\">delete_forever</i>
                                             </button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            ";
+                                        </a>";
+                                    }
+                                        echo "</td></tr>";
                             }
                             ?>
                             </tbody>

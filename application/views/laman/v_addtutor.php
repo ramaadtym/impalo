@@ -27,7 +27,7 @@
 <section class="content">
     <div class="container-fluid">
         <!-- Input -->
-        <form id="form_advanced_validation" action="../../fungsi/pendaftaran.php?addUser=tambahuser" method="POST">
+        <form id="form_advanced_validation" action="<?php echo base_url(); ?>User/tambahTutor" method="POST">
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
@@ -143,6 +143,17 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <h2 class="card-inside-title">Kode Tutor</h2>
+                            <div class="col-sm-12">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" minlength="3" maxlength="3" name="kode_tutor" required>
+                                            <label class="form-label">Kode Tutor</label>
+                                            <div class="help-info">Only 3 characters</div>
+                                        </div>
+                                    </div>
+                                </div>
                             <h2 class="card-inside-title">Kontak</h2>
                             <div class="row clearfix">
                                 <div class="col-sm-6">
@@ -164,6 +175,30 @@
                                     </div>
                                 </div>
                             </div>
+                             <div class="col-sm-6">
+                                    <label class="form-label">Mata Kuliah 1</label>
+                                    <select class="form-control show-tick" name="matkul1" required>
+                                        <option value="">-- Pilih Mata Kuliah --</option>
+                                        <?php
+                                        foreach ($tabelMatkul as $value) {?>
+                                            <option value="<?php echo $value->kode_matkul; ?>"><?php echo $value->nama_matkul; ?></option>
+
+                                            <?php }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label">Mata Kuliah 2</label>
+                                    <select class="form-control show-tick" name="matkul2" required>
+                                        <option value="">-- Pilih Mata Kuliah --</option>
+                                        <?php
+                                        foreach ($tabelMatkul as $value) {?>
+                                            <option value="<?php echo $value->kode_matkul; ?>"><?php echo $value->nama_matkul; ?></option>
+
+                                            <?php }
+                                        ?>
+                                    </select>
+                                </div>
                             <div class="row clearfix">
                                 <div class="col-sm-12">
                                     <input type="submit" name="submit" class="btn btn-block btn-lg bg-blue waves-effect">

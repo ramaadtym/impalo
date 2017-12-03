@@ -25,6 +25,12 @@ class M_Kelas extends CI_Model
         $query = $this->db->get('kelas');
         return $query;
     }
+    public function getKelasTutor($kode_tutor)
+    {
+        $this->db->where('kode_tutor', $kode_tutor);
+        $query = $this->db->get('kelas');
+        return $query;
+    }
 
     public function tambahKelas($data,$datamhs)
     {

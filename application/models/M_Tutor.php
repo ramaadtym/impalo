@@ -14,5 +14,16 @@ class M_Tutor extends CI_Model
         $query =$this->db->get('user');
         return $query;
     }
+    public function tambahTutor($data)
+    {
+    	$this->db->insert('tutor', $data);
+    	return $this->db->affected_rows() > 0;
+    }
+    public function getTutorbyNim($nim)
+    {
+    	$this->db->where('nim', $nim);
+    	$query = $this->db->get('tutor');
+    	return $query->result()[0];
+    }
 
 }

@@ -20,10 +20,10 @@ class Utama extends MY_Controller
     }
 
     function Login(){
+        print("<pre>".print_r($_POST,true)."</pre>");
         $username = $this->input->post('nim');
         $pwd = sha1($this->input->post('pwd'));
         $cek = $this->M_User->validasiLogin($username,$pwd); //load model login
-        echo "cek";
         if($cek->num_rows() > 0){
             $this->session->set_userdata('masuk',true);
             $this->session->set_userdata('user',$username);
@@ -46,7 +46,7 @@ class Utama extends MY_Controller
                 $this->session->set_userdata('akses','Tutor');
                 $nama = $role['nama'];
                 $nim = $role['nim'];
-                $kode_tutor = $role['kode_tutor'];
+                $kode_tutor = $this->M_Tutor->getTutorbyNim($nim)->kode_tutor;
                 $this->session->set_userdata('nama',$nama);
                 $this->session->set_userdata('nim',$nim);
                 $this->session->set_userdata('kode_tutor',$kode_tutor);
@@ -57,7 +57,7 @@ class Utama extends MY_Controller
             redirect('Utama/Dashboard');
         }
         else{
-            var_dump($_SESSION);
+            redirect('/','refresh');
         }
 
     }

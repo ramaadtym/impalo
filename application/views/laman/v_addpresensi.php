@@ -26,23 +26,9 @@
 </section>
 <section class="content">
     <div class="container-fluid">
-        <!-- Input -->
-        <!-- STEP 2 -->
-        <?php if (isset($_GET["kode_kelas"])){
-            $kode_kelas = $_GET['kode_kelas'];
-            $sql = "SELECT * 
-                        from kelas k
-                        JOIN matkul m ON (m.kode_matkul = k.kode_matkul)
-                        JOIN tutor t ON (t.kode_tutor = k.kode_tutor)
-                        WHERE k.kode_kelas='$kode_kelas'
-                        ";
-            $query = mysqli_query($connect, $sql);
-            if (mysqli_num_rows($query) == 0) {
-                echo '<script>alert("Kode Kelas Tidak Sesuai!");window.location.href=\'../presensi\';</script>';
-            }
-            $kelas = mysqli_fetch_array($query);
-            ?>
-            <form id="form_advanced_validation" method="POST" action="../../fungsi/pendaftaran.php?addPresensi=tambahpresensi"enctype="multipart/form-data">
+    <?php 
+    if ($this->input->server('REQUEST_METHOD') == "POST"){ ?>
+            <form id="form_advanced_validation" method="POST" action="<?php echo base_url(); ?>Presensi/tambahPresensi" enctype="multipart/form-data">
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card">
@@ -55,25 +41,21 @@
                                 <h2 class="card-inside-title">Data Kelas</h2>
                                 <div class="row clearfix">
                                     <div class="col-sm-12">
-                                        <?php echo "<input type='hidden' name='kode_kelas' class='form-control' value='$kelas[kode_kelas]'>" ?>
-                                        <?php echo "<b>Kode Kelas : </b>".$kelas['kode_kelas']; ?>
+                                        <?php echo "<input type='hidden' name='kode_kelas' class='form-control' value='$kelas->kode_kelas'>" ?>
+                                        <?php echo "<b>Kode Kelas : </b>".$kelas->kode_kelas; ?>
                                     </div>
                                     <div class="col-sm-12">
-                                        <?php echo "<input type='hidden' name='kode_matkul' class='form-control' value='$kelas[kode_matkul]'>" ?>
-                                        <?php echo "<b>Mata Kuliah : </b>".$kelas['nama_matkul']; ?>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <?php echo "<input type='hidden' name='kode_tutor' class='form-control' value=$kelas[kode_tutor]>"; ?>
-                                        <?php echo "<b>Kode Tutor : </b>".$kelas['kode_tutor']; ?>
+                                        <?php echo "<input type='hidden' name='kode_tutor' class='form-control' value=$kelas->kode_tutor>"; ?>
+                                        <?php echo "<b>Kode Tutor : </b>".$kelas->kode_tutor; ?>
                                     </div>
                                 </div>
                                 <h2 class="card-inside-title">Jadwal Utama</h2>
                                 <div class="row clearfix">
                                     <div class="col-sm-12">
-                                        <?php echo "<b>Hari : </b>".$kelas['hari']; ?>
+                                        <?php echo "<b>Hari : </b>".$kelas->hari; ?>
                                     </div>
                                     <div class="col-sm-12">
-                                        <?php echo "<b>Jam : </b>".$kelas['jam']; ?>
+                                        <?php echo "<b>Jam : </b>".$kelas->jam; ?>
                                     </div>
                                 </div>
                                 <h2 class="card-inside-title">Pelaksanaan</h2>
@@ -130,22 +112,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group form-float">
-                                            <label class="form-label">Scan Absensi</label>
-                                            <div class="form-line">
-                                                <input type="file" class="form-control" name="image" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group form-float">
-                                            <label class="form-label">Foto Dokumentasi</label>
-                                            <div class="form-line">
-                                                <input type="file" class="form-control" name="dokumentasi" required>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="col-sm-12">
                                         <input type="checkbox" id="pernyataan" name="pernyataan" required />
                                         <label for="pernyataan">Dengan ini saya menyatakan bahwa data yang saya berikan adalah benar.</label>
@@ -161,12 +127,8 @@
                     </div>
                 </div>
             </form>
-            <!-- END STEP 2 -->
-            <!-- STEP 1 -->
-            <?php
-        } else {
-            ?>
-            <form id="form_advanced_validation" method="GET">
+            <?php } else { ?>
+            <form id="form_advanced_validation" method="POST">
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card">
@@ -182,14 +144,8 @@
                                         <select class="form-control show-tick" name="kode_kelas" required>
                                             <option value="">-- Pilih Kelas --</option>
                                             <?php
-                                            $sql = "SELECT kode_kelas from kelas";
-                                            $kelas = mysqli_query($connect,$sql);
-                                            if(mysqli_num_rows($kelas) == 0){
-                                                echo '-- Data Kelas Tidak Tersedia --';
-                                            } else {
-                                                foreach ($kelas as $value) {
-                                                    echo "<option value='".$value['kode_kelas']."'>".$value['kode_kelas']."</option>";
-                                                }
+                                            foreach ($tabelKelas as $value) {
+                                                echo "<option value='".$value->kode_kelas."'>".$value->kode_kelas."</option>";
                                             }
                                             ?>
                                         </select>
@@ -205,7 +161,7 @@
                     </div>
                 </div>
             </form>
-        <?php } ?>
+            <?php } ?>
         <!-- END STEP 2 -->
         <!-- #END# Input -->
     </div>

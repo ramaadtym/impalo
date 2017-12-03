@@ -115,22 +115,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group form-float">
-                                            <label class="form-label">Scan Absensi</label>
-                                            <a href="<?php echo base_url(); ?>assets/images/presensi/<?php echo $dataPresensi->img_absen;?>" data-sub-html="Demo Description" target="_blank">
-                                                <img class="img-responsive thumbnail" src="<?php echo base_url(); ?>assets/images/presensi/<?php echo $dataPresensi->img_absen;?>">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group form-float">
-                                            <label class="form-label">Foto Dokumentasi</label>
-                                            <a href="<?php echo base_url(); ?>assets/images/dokumentasi/<?php echo $dataPresensi->dokumentasi;?>" data-sub-html="Demo Description" target="_blank">
-                                                <img class="img-responsive thumbnail" src="<?php echo base_url(); ?>assets/images/dokumentasi/<?php echo $dataPresensi->dokumentasi;?>">
-                                            </a>
-                                        </div>
-                                    </div>
                                     <div class="col-sm-12">
                                         <input type="checkbox" id="pernyataan" name="pernyataan" required />
                                         <label for="pernyataan">Dengan ini saya menyatakan bahwa data yang saya berikan adalah benar.</label>

@@ -16,13 +16,14 @@ class Gaji extends MY_Controller
 }
 
     public function index(){
+    	$role = $this->session->userdata('akses');
+    	if ($role == "Admin"){
 		$query = $this->M_Presensi->pelaporanGaji();
 		$data['tabelGaji'] = $query->result();
         $this->gaji_page('laman/v_gaji',$data);
-
-         
-    }
-    public function editProfil(){
-
-    }
+		} else 
+		{
+			redirect('Utama','refresh');
+		}
+    }		
 }

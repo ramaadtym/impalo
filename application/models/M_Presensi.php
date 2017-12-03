@@ -14,6 +14,11 @@ class M_Presensi extends CI_Model {
 		$query = $this->db->get('absensi');
 		return $query->result();
 	}	
+	public function getPresensiTutor($kode_tutor){
+		$this->db->where('kode_tutor', $kode_tutor);
+		$query = $this->db->get('absensi');
+		return $query->result();
+	}
 	public function hapusPresensi($id_absensi)
 	{
 		$this->db->where('id_absensi', $id_absensi);
@@ -32,6 +37,24 @@ class M_Presensi extends CI_Model {
 									where admin_acc is not null
 									group by kode_tutor");
 		return $query;
+	}
+	public function tambahPresensi($data)
+	{
+		$this->db->insert('Absensi', $data);
+		return $this->db->affected_rows() > 0;
+	}
+	public function suntingPresensi($id_absensi,$data)
+	{
+		$this->db->where('id_absensi', $id_absensi);
+		$this->db->update('Absensi', $data);
+		return $this->db->affected_rows() > 0;
+	}
+	public function accPresensi($id_absensi, $nama)
+	{
+		$data['status_acc'] = "Sudah Diverifikasi";
+		$data['admin_acc'] = $nama;
+		$this->db->where('id_absensi', $id_absensi);
+		$this->db->update('absensi', $data);
 	}
 
 }
