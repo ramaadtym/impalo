@@ -56,7 +56,16 @@ class MataKuliah extends MY_Controller
     public function suntingMataKuliah($kode_matkul)
     {
         if ($this->session->userdata('masuk') && $this->session->userdata('akses') == "Admin") {
-
+            if ($this->input->server('REQUEST_METHOD') == "POST"){
+                $nama_matkul = $this->input->post('nama_matkul');
+                $this->M_Matakuliah->suntingMataKuliah($kode_matkul,$nama_matkul);
+                redirect('MataKuliah','refresh');
+            }
+            else
+            {
+                $data['matkul'] = $this->M_Matakuliah->getMataKuliahbyID($kode_matkul);
+                $this->matkul_page('laman/v_editmatkul',$data);
+            }
             }
         else {
             redirect('/', 'refresh');

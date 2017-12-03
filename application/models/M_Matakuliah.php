@@ -36,6 +36,12 @@ class M_Matakuliah extends CI_Model
         $query = $this->db->get('matkul');
         return $query;
     }
+    public function getMataKuliahbyID($kode_matkul)
+    {
+        $this->db->where('kode_matkul', $kode_matkul);
+        $query = $this->db->get('matkul');
+        return $query->result()[0];
+    }
 
     public function suntingMataKuliah($kode_matkul,$nama_matkul)
     {
