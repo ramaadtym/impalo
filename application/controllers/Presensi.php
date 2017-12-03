@@ -39,7 +39,7 @@ class Presensi extends MY_Controller
         if ($role == "Admin"){
         $query = $this->M_Kelas->getKelas();
         $data['tabelKelas'] = $query->result();
-            echo $kode_tutor;
+//            echo $kode_tutor;
         }
         else if ($role == "Tutor")
         {
