@@ -20,7 +20,7 @@ class Utama extends MY_Controller
     }
 
     function Login(){
-        print("<pre>".print_r($_POST,true)."</pre>");
+//        print("<pre>".print_r($_POST,true)."</pre>");
         $username = $this->input->post('nim');
         $pwd = sha1($this->input->post('pwd'));
         $cek = $this->M_User->validasiLogin($username,$pwd); //load model login
