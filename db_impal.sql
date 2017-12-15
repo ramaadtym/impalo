@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Dec 03, 2017 at 10:08 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Host: 127.0.0.1
+-- Generation Time: Dec 15, 2017 at 05:08 AM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 7.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -215,7 +213,6 @@ INSERT INTO `detil_user` (`nim`, `nama`, `jeniskelamin`, `tgl_lahir`, `fakultas`
 ('1234567878', 'Dummy Tutor', 'Laki-laki', 'Minggu 03 Desember 2017', 'ILMU TERAPAN', 'S1 SISTEM KOMPUTER (LANJUTAN)', '', 'DWP', '0812308120381'),
 ('1301154646', 'kucing', 'Laki-laki', 'Minggu 03 Desember 2017', 'ILMU TERAPAN', 'S1 TEKNIK TELEKOMUNIKASI (LANJUTAN)', '', '1301154646', '1301154646'),
 ('1301151234', 'Fakhri Fauzan', 'Laki-laki', '12/02/1996', 'Informatika', 'S1 Teknik Informatika', 'IF 39 10', '@asdad', '1545645613514'),
-('1301151234', 'Fakhri Fauzan', 'Laki-laki', '12/02/1996', 'Informatika', 'S1 Teknik Informatika', 'IF 39 10', '@asdad', '1545645613514'),
 ('1301150001', 'Faishal Rachman', 'Laki-laki', '12/02/1996', 'Informatika', 'S1 Teknik Informatika', 'IF 39 06', '@asdada', '16549841'),
 ('1301152222', 'Aziza Hayupratiwi', 'Perempuan', '12/02/1996', 'Informatika', 'S1 Teknik Informatika', 'IF 39 06', '@adskjhna', '0361456458');
 
@@ -278,7 +275,8 @@ CREATE TABLE `lampiran` (
 --
 
 INSERT INTO `lampiran` (`id`, `nama`, `tipe`, `ukuran`, `kategori`, `tanggal`, `nim`, `file`) VALUES
-(1, 'asdadad', 'applicatio', '298.63', 'MATERI', '2017-12-03', '1301150001', 'grafikfikfix.docx');
+(1, 'asdadad', 'applicatio', '298.63', 'MATERI', '2017-12-03', '1301150001', 'grafikfikfix.docx'),
+(2, 'tes', 'applicatio', '13.62', 'SOAL', '2017-12-15', '1301151234', 'tes1.docx');
 
 -- --------------------------------------------------------
 
@@ -372,7 +370,7 @@ INSERT INTO `user` (`nim`, `username`, `password`, `email`, `user_level`, `last_
 ('1301150040', 'jijah', '8cb2237d0679ca88db6464eac60da96345513964', 'jijah@gmail.com', 'Administrator', '2017-09-17 20:26:14'),
 ('1301150444', 'efadilazain', '7a2502635c04636a4ce113187c8ba58b6741bea5', 'efadilazain@gmail.com', 'Administrator', '2017-03-27 22:38:43'),
 ('1301151234', 'dummy_tutor', '46dc6ff47ee6e770ea47f4a69c274438642fa00d', 'cietutor@mail.com', 'Tutor', '0000-00-00 00:00:00'),
-('1301152222', 'dummy_mhs', 'ciemhs', 'mhs@mail.com', 'Mahasiswa', '0000-00-00 00:00:00'),
+('1301152222', 'dummy_mhs', 'a1d52f50abfb68bc4207ccf8bc0b390e5b44af64', 'mhs@mail.com', 'Mahasiswa', '0000-00-00 00:00:00'),
 ('1301154160', '1301154160', '959d62c1fcaae1133bca6b95bb3f99c5de02fe14', 'faishalr97@gmail.com', 'Tutor', '2017-05-06 11:42:56'),
 ('1301154164', 'septiandrd', 'cd0bdc9920bfcf6e6fca8ec57ac715547929b7cc', 'septiandrd@gmail.com', 'Tutor', '2017-05-19 12:25:36'),
 ('1301154200', '1301154200', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', '', 'Mahasiswa', '0000-00-00 00:00:00'),
@@ -494,7 +492,7 @@ ALTER TABLE `absensi`
 -- AUTO_INCREMENT for table `lampiran`
 --
 ALTER TABLE `lampiran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -511,7 +509,6 @@ ALTER TABLE `absensi`
 ALTER TABLE `detail_kelas`
   ADD CONSTRAINT `fk_detail_kelas` FOREIGN KEY (`kode_kelas`) REFERENCES `kelas` (`kode_kelas`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_detail_user` FOREIGN KEY (`nim`) REFERENCES `user` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
